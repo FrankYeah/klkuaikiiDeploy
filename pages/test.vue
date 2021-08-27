@@ -234,7 +234,6 @@ export default {
 
   &-result {
     max-width: 420px;
-    width: 100%;
     padding: 14px;
   }
 
@@ -244,7 +243,6 @@ export default {
 
   &-qa {
     max-width: 420px;
-    width: 100%;
     padding: 14px;
   }
 
