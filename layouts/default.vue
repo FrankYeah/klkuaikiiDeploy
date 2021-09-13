@@ -2,7 +2,6 @@
   <div>
     <topBar/>
     <nuxt/>
-    <bottomBar/>
   </div>
 </template>
 
@@ -11,7 +10,6 @@
 export default {
   components: {
     topBar: require('~/components/top-bar.vue').default,
-    bottomBar: require('~/components/bottom-bar.vue').default, 
   },
   props: {
 
@@ -90,6 +88,7 @@ body {
   padding: 0px;
   font-family: 'Noto Sans TC', 'Noto Sans SC', 'Lato' ,sans-serif;
   background-color: #f0f0f0;
+  color: white;
   // font-family: 'GoudyOldStyle,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,PingFang TC,Hiragino Sans GB,Microsoft JhengHei,sans-serif!important';
 }
 

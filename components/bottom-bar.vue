@@ -1,6 +1,7 @@
 <template>
-  <div class="top">
-
+  <div class="bottom">
+    <div class="bottom-text">Copyright 2021 雞籠怪奇博物館</div>
+    <div class="bottom-text">All Rights Reserved | Powered by 雞籠怪奇博物館</div>
   </div>
 </template>
 
@@ -31,7 +32,7 @@ export default {
 
 <style lang="scss">
 
-.top {
+.bottom {
 
 
 }
