@@ -19,7 +19,7 @@
       <div class="about-text">2020年「怪奇逃走中」初登場</div>
       <div class="about-text-box">
         <div class="about-text">是第一款屬於基隆的城市RPG實境遊戲</div>
-        <router-link :to="'/'">
+        <router-link class="about-back-box" :to="'/'">
           <div class="about-back">Back</div>
         </router-link>
       </div>
@@ -84,7 +84,6 @@ export default {
   }
 
   &-text {
-    margin-top: 8px;
     font-size: 20px;
     line-height: 1.5;
   }
@@ -92,6 +91,10 @@ export default {
   &-text-box {
     display: flex;
     justify-content: space-between;
+  }
+
+  &-back-box {
+
   }
 
   &-back {
@@ -113,6 +116,36 @@ export default {
 }
 
 @media( max-width: 500px ){
+
+.about {
+  
+
+  &-box {
+    width: auto;
+    padding: 0px 20px 40px;
+  }
+
+  &-head {
+    
+  }
+
+  &-text {
+    font-size: 18px;
+  }
+
+  &-text-box {
+    flex-direction: column;
+  }
+
+  &-back-box {
+    margin: 40px auto 0px;
+  }
+
+  &-back {
+    margin: auto;
+  }
+
+}
 
 }
 
