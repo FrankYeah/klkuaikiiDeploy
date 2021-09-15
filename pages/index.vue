@@ -5,7 +5,6 @@
         <video
           width="100%"
           height="100%"
-          controls
           autoplay
           loop
           muted
@@ -368,13 +367,13 @@ export default {
   }
 
   &-intro {
+    position: relative;
     margin-top: -1px;
     background-image: url('../assets/img/index/bg-blue.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
-    background-attachment: fixed;
 
     &-head-box {
       display: flex;
@@ -492,12 +491,12 @@ export default {
   }
 
   &-role {
+    position: relative;
     background-image: url('../assets/img/index/bg-main.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
-    background-attachment: fixed;
 
     &-box {
       display: flex;
@@ -552,13 +551,22 @@ export default {
 
   &-pall {
     position: relative;
-    min-height: 600px;
-    background-image: url('../assets/img/index/pic-scene.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: center;
-    background-attachment: fixed;
+    height: 600px;
+
+    &::before {
+      content: ' ';
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url('../assets/img/index/pic-scene.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: center;
+    }
 
     &-text-box {
       position: absolute;
@@ -888,7 +896,7 @@ export default {
   }
 
   &-pall {
-    min-height: 500px;
+    height: 500px;
 
     &-text-box {
       
