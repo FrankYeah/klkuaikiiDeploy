@@ -312,7 +312,7 @@ export default {
     position: relative;
     max-width: 440px;
     min-height: calc(100vh - 28px);
-    background: url('../assets/img/test/bg/bg1.jpg');
+    background-image: url('../assets/img/test/bg/bg1.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: center;

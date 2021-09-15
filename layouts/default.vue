@@ -124,6 +124,12 @@ textarea {
   }
 }
 
+// 隱藏影片控制選項
+
+video::-webkit-media-controls {
+  display:none !important;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .6s;
 }

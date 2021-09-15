@@ -5,9 +5,11 @@
         <video
           width="100%"
           height="100%"
+          controls
           autoplay
           loop
           muted
+          playsinline
         >
           <source
             src="@/assets/video/monster-video.mp4"
@@ -334,7 +336,8 @@ export default {
     }
   },
   mounted () {
-    
+    var mediaElem = document.querySelector("video")
+    mediaElem.load()
   },
   computed: {
 
@@ -366,7 +369,7 @@ export default {
 
   &-intro {
     margin-top: -1px;
-    background: url('../assets/img/index/bg-blue.png');
+    background-image: url('../assets/img/index/bg-blue.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -453,7 +456,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: url('../assets/img/index/bg-blue-river.png');
+      background-image: url('../assets/img/index/bg-blue-river.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -478,6 +481,7 @@ export default {
       top: 50px;
       right: 10%;
       transform: rotate(-30deg);
+      pointer-events: none;
       z-index: 1;
     }
 
@@ -488,7 +492,7 @@ export default {
   }
 
   &-role {
-    background: url('../assets/img/index/bg-main.png');
+    background-image: url('../assets/img/index/bg-main.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -549,7 +553,7 @@ export default {
   &-pall {
     position: relative;
     min-height: 600px;
-    background: url('../assets/img/index/pic-scene.png');
+    background-image: url('../assets/img/index/pic-scene.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
