@@ -42,7 +42,22 @@
 
     <!-- 解答 -->
     <div v-else-if="isShowResult == '解答'" class="test-result">
-      <div class="test-result-text">你是 {{ result }}！</div>
+      <img class="test-result-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="">
+      <div class="test-result-text">你是</div>
+      <div @click="isShowResult = '解說'" class="test-result-text-btn">{{ result }}</div>
+    </div>
+
+    <!-- 解答 -->
+    <div v-else-if="isShowResult == '解說'" class="test-desc">
+      <img class="test-desc-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="">
+      <div class="test-desc-name">咖啡渣</div>
+      <div class="test-desc-sub">特性</div>
+      <div v-html="resultText[`${resultImg}`].style" class="test-desc-text"></div>
+      <div class="test-desc-sub">總類</div>
+      <div v-html="resultText[`${resultImg}`].class" class="test-desc-text"></div>
+      <div class="test-desc-sub">生成情緒原因</div>
+      <div v-html="resultText[`${resultImg}`].reason" class="test-desc-text"></div>
+      <div v-html="resultText[`${resultImg}`].desc" class="test-desc-desc"></div>
     </div>
 
     
@@ -66,7 +81,6 @@ export default {
     return {
       qNum: 0,
       isShowResult: '前言',
-      result: '',
       totalType: {
         naive: 0,
         orphan: 0,
@@ -187,7 +201,41 @@ export default {
           ans5: 'E：悲慘的存在。',
           ans5Type: 'sacre',
         },
-      ]
+      ],
+      result: '',
+      resultImg: '',
+      resultText: {
+        'stop': {
+          'style': '纏黏束縛<br>造成周遭怨聲載道',
+          'class': '擾人現象',
+          'reason': '因基隆市區多單行道，車道少卻又常有並排違停，形成車道阻塞、叭聲不斷，那些群眾的憤怒逐漸累積，生成了怪奇。',
+          'desc': '基隆市區多為單行道，常有貪圖方便的民眾並排違停，形成車道阻塞、叭聲不斷。這種「應該不會造成太大困擾吧？」的天真想法，所形成的怪奇，就是名為「違停」的你。你總是認為人們彼此體諒、忍讓，就可以和平相處。但如果知道有多少人恨你的話，可能會讓你大吃一驚唷。'
+        },
+        'hole': {
+          'style': '適應黑暗的角落<br>急需安全感',
+          'class': '被遺棄、消逝',
+          'reason': '在戰爭中庇護人們的防空洞，因人類的恐懼而生成怪奇，戰後卻面臨被遺忘，甚至封洞的命運。',
+          'desc': '基隆從日本時期起就是空襲的主要目標，因而設置的防空洞多不勝數。在戰爭中庇護人們的你，吸收了人類的恐懼，卻在戰後被遺忘，甚至面臨封洞的命運，讓你感覺自己被拋棄。因此你總是感到不安，覺得他人、世界都是危險的，想尋找一個可以安心的所在。不過也許得自己踏出「洞外」，才有機會找到那個地方唷。'
+        },
+        'man': {
+          'style': '一但被鎖定便會根深柢固死纏爛打',
+          'class': '擾人現象',
+          'reason': '基隆人家家戶戶必備，比蟑螂更頑強，尻不完、漆不去，擁有無限生命力，在人們煩燥中成形。',
+          'desc': '你在多雨的基隆如魚得水，觸手深入每個家庭；你比蟑螂更頑強，比野草更會再生⋯⋯沒錯，你就是基隆人聞之色變的怪奇「壁癌」！與基隆嫁妝第一名「除濕機」為死對頭。你在與基隆人的鬥爭中，吸收他們的煩燥感而茁壯，天生就是個鬥士。越是艱困的處境，越能激起你的鬥志。但是，總是戰鬥的生活，會不會也有點累呢⋯⋯'
+        },
+        'cancer': {
+          'style': '無所事事<br>毫無用途的復仇渣男',
+          'class': '被遺棄',
+          'reason': '自覺高人一等的咖啡渣來自全球各地，不凡的生命在被烹煮成咖啡的瞬間就被遺棄，深深的不甘心生成了怪奇。但因文青形象而導致壓抑極深，因此同是不甘心怪奇，卻比吉古拉威力強大多倍。',
+          'desc': '出現於基隆最潮時期，自覺高人一等、來自全球各地，不凡的生命在被烹煮成咖啡的瞬間就失去了意義，對存在的困惑生成了怪奇。<br>你是怪奇「咖啡渣」，無論何時總是自帶著某種歷盡滄桑的漂泊感，還有種淡淡的抑鬱。看似好相處，其實一直讓人很有距離感呢。你總是看著遠方，但會不會你所追尋的答案，就在眼前、腳下某個平凡的角落呢？'
+        },
+        'bridge': {
+          'style': '被厭惡而使人不想靠近',
+          'class': '消逝',
+          'reason': '為了用路人方便而建，而後卻又因不方便而被嫌棄，如今天橋被拆光光了，厭世心理只比通勤少一點。',
+          'desc': '為了基隆人通行方便而建，成為城市的一道風景；卻又因都市成長，而成為多餘、甚至礙眼的存在，淪為一座一座被拆除的對象。<br>沒錯，你就是怪奇「天橋」。同為不再被城市需要的對象，你並不像「防空洞」一樣感到被遺棄，而是為自己的犧牲奉獻感到滿足。但是太過沈浸在對他人有貢獻的幻想中，可能會忘了為自己好好而活唷。可以再多照顧自己一點嗎？'
+        },
+      }
     }
   },
   mounted () {
@@ -230,15 +278,20 @@ export default {
         let arr = Object.values(this.totalType)
         let max = Math.max(...arr)
         if(this.totalType.naive == max) {
-          this.result = '天真者'
+          this.result = '違停'
+          this.resultImg = 'stop'
         } else if(this.totalType.orphan == max) {
-          this.result = '孤兒'
+          this.result = '防空洞'
+          this.resultImg = 'hole'
         } else if(this.totalType.wonderer == max) {
-          this.result = '流浪者'
+          this.result = '咖啡渣'
+          this.resultImg = 'man'
         } else if(this.totalType.fighter == max) {
-          this.result = '鬥士'
+          this.result = '壁癌'
+          this.resultImg = 'cancer'
         } else {
-          this.result = '殉道者'
+          this.result = '天橋'
+          this.resultImg = 'bridge'
         }
     }
   },
@@ -350,8 +403,9 @@ export default {
 
   &-result {
     position: relative;
-    max-width: 300px;
+    max-width: 380px;
     min-height: calc(100vh - 28px);
+    text-align: center;
     background-image: url('../assets/img/test/bg/bg3.jpg');
     background-repeat: no-repeat;
     background-size: contain;
@@ -360,12 +414,79 @@ export default {
     background-attachment: fixed;
     padding: 14px 60px;
 
+    &-img {
+      width: 150px;
+      margin-top: 80px;
+    }
+
     &-text {
-      font-size: 24px;
+      font-size: 18px;
+    }
+
+    &-text-btn {
+      width: 140px;
+      margin: 20px auto 0px;
+      padding: 6px 0px 6px 16px;
+      letter-spacing: 16px;
+      text-align: center;
+      font-size: 22px;
+      background-color: rgba(20, 75, 7, 0.6);
+      border-radius: 30px;
+      cursor: pointer;
     }
   }
 
-  
+  &-desc {
+    position: relative;
+    max-width: 380px;
+    min-height: calc(100vh - 28px);
+    background-image: url('../assets/img/test/bg/bg4.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+    padding: 14px 60px;
+
+    &-img {
+      position: absolute;
+      right: 36px;
+      top: 90px;
+      height: 160px;
+    }
+
+    &-name {
+      width: 100px;
+      margin: 20px 0px 8px;
+      padding: 6px 0px 6px 6px;
+      letter-spacing: 6px;
+      text-align: center;
+      font-size: 18px;
+      color: black;
+      background-color:#96ff3c;
+      border-radius: 30px;
+    }
+
+    &-sub {
+      margin-top: 24px;
+      color: #96ff3c;
+    }
+
+    &-text {
+      margin-top: 6px;
+      line-height: 1.3;
+      text-align: justify;
+    }
+
+    &-desc {
+      margin-top: 20px;
+      padding: 15px;
+      line-height: 1.3;
+      color: black;
+      background-color: rgb(139, 138, 144);
+      text-align: justify;
+    }
+  }
 
 }
 
