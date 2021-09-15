@@ -50,7 +50,7 @@
     <!-- 解答 -->
     <div v-else-if="isShowResult == '解說'" class="test-desc">
       <img class="test-desc-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="">
-      <div class="test-desc-name">咖啡渣</div>
+      <div class="test-desc-name">{{ result }}</div>
       <div class="test-desc-sub">特性</div>
       <div v-html="resultText[`${resultImg}`].style" class="test-desc-text"></div>
       <div class="test-desc-sub">總類</div>
