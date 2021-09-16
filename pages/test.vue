@@ -4,7 +4,7 @@
     <!-- 前言 -->
     <div v-if="isShowResult == '前言'" class="test-pre">
 
-      <img class="test-pre-img" src="@/assets/img/test/monster/fish.png" alt="">
+      <img class="test-pre-img" src="@/assets/img/test/monster/fish.png" alt="fish">
 
       <div class="test-pre-text-box">
         <div class="test-pre-text"> 探員⋯⋯</div>
@@ -28,7 +28,7 @@
       <div>
         <div class="test-qa-img-box">
           <div class="test-qa-num">{{qNum + 1}}.</div>
-          <img class="test-qa-img" :src="require(`@/assets/img/test/monster/${qa[qNum].monster}.png`)" alt="">
+          <img class="test-qa-img" :src="require(`@/assets/img/test/monster/${qa[qNum].monster}.png`)" alt="monster">
         </div>
         <!-- require('@/assets/img/test/monster/fish.png') -->
         <div v-html="qa[qNum].question" class="test-qa-question"></div>
@@ -42,22 +42,36 @@
 
     <!-- 解答 -->
     <div v-else-if="isShowResult == '解答'" class="test-result">
-      <img class="test-result-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="">
+      <img class="test-result-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="monster">
       <div class="test-result-text">你是</div>
       <div @click="isShowResult = '解說'" class="test-result-text-btn">{{ result }}</div>
     </div>
 
     <!-- 解答 -->
     <div v-else-if="isShowResult == '解說'" class="test-desc">
-      <img class="test-desc-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="">
+      <img class="test-desc-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="monster">
       <div class="test-desc-name">{{ result }}</div>
-      <div class="test-desc-sub">特性</div>
+      <div @click="isShowResult = '再玩一次'" class="test-desc-sub">特性</div>
       <div v-html="resultText[`${resultImg}`].style" class="test-desc-text"></div>
       <div class="test-desc-sub">總類</div>
       <div v-html="resultText[`${resultImg}`].class" class="test-desc-text"></div>
       <div class="test-desc-sub">生成情緒原因</div>
       <div v-html="resultText[`${resultImg}`].reason" class="test-desc-text"></div>
       <div v-html="resultText[`${resultImg}`].desc" class="test-desc-desc"></div>
+    </div>
+
+    <!-- 再玩一次 -->
+    <div v-else-if="isShowResult == '再玩一次'" class="test-re">
+      <img class="test-re-img" :src="require(`@/assets/img/test/monster/hole2.png`)" alt="bridge">
+      <img class="test-re-img" :src="require(`@/assets/img/test/monster/stop2.png`)" alt="stop">
+      <img class="test-re-img" :src="require(`@/assets/img/test/monster/bridge2.png`)" alt="hole">
+      <img class="test-re-img" :src="require(`@/assets/img/test/monster/cancer2.png`)" alt="cancer">
+      <img class="test-re-img" :src="require(`@/assets/img/test/monster/man2.png`)" alt="man">
+      
+      <div class="test-re-btn-box">
+        <div class="test-re-btn">再玩一次</div>
+        <div class="test-re-btn">認識其他小怪奇</div>
+      </div>
     </div>
 
     
@@ -485,6 +499,78 @@ export default {
       color: black;
       background-color: rgb(139, 138, 144);
       text-align: justify;
+    }
+  }
+
+  &-re {
+    position: relative;
+    max-width: 380px;
+    min-height: calc(100vh - 28px);
+    background-image: url('../assets/img/test/bg/bg4.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 36px;
+
+    &-img {
+      position: absolute;
+
+      &:nth-child(1) {
+        width: 160px;
+        top: 10px;
+        left: 20px;
+      }
+
+      &:nth-child(2) {
+        width: 80px;
+        top: 30px;
+        right: 20px;
+        
+      }
+
+      &:nth-child(3) {
+        width: 220px;
+        top: 140px;
+        left: 70px;
+        
+      }
+
+      &:nth-child(4) {
+        width: 120px;
+        top: 260px;
+        left: 10px;
+        
+      }
+
+      &:nth-child(5) {
+        width: 200px;
+        top: 280px;
+        right: 10px;
+        
+      }
+
+    }
+
+    &-btn-box {
+      width: 100%;
+      z-index: 1;
+    }
+
+    &-btn {
+      width: 240px;
+      margin: 20px auto 0px;
+      padding: 8px 0px 8px 2px;
+      letter-spacing: 2px;
+      text-align: center;
+      font-size: 16px;
+      background-color: rgba(20, 75, 7, 0.6);
+      border-radius: 30px;
+      cursor: pointer;
     }
   }
 
