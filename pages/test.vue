@@ -44,33 +44,48 @@
     <div v-else-if="isShowResult == '解答'" class="test-result">
       <img class="test-result-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="monster">
       <div class="test-result-text">你是</div>
-      <div @click="isShowResult = '解說'" class="test-result-text-btn">{{ result }}</div>
+      <div class="test-result-text-btn">{{ result }}</div>
+      <img @click="isShowResult = '解說'" class="test-result-next" :src="require(`@/assets/img/test/next.png`)" alt="monster">
     </div>
 
-    <!-- 解答 -->
+    <!-- 解說 -->
     <div v-else-if="isShowResult == '解說'" class="test-desc">
       <img class="test-desc-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="monster">
       <div class="test-desc-name">{{ result }}</div>
-      <div @click="isShowResult = '再玩一次'" class="test-desc-sub">特性</div>
+      <div class="test-desc-sub">特性</div>
       <div v-html="resultText[`${resultImg}`].style" class="test-desc-text"></div>
       <div class="test-desc-sub">總類</div>
       <div v-html="resultText[`${resultImg}`].class" class="test-desc-text"></div>
       <div class="test-desc-sub">生成情緒原因</div>
       <div v-html="resultText[`${resultImg}`].reason" class="test-desc-text"></div>
-      <div v-html="resultText[`${resultImg}`].desc" class="test-desc-desc"></div>
+      <div class="test-desc-desc">
+        <div v-html="resultText[`${resultImg}`].desc"></div>
+        <img @click="isShowResult = '再玩一次'" class="test-desc-next" :src="require(`@/assets/img/test/next.png`)" alt="monster">
+      </div>
     </div>
 
     <!-- 再玩一次 -->
     <div v-else-if="isShowResult == '再玩一次'" class="test-re">
-      <img class="test-re-img" :src="require(`@/assets/img/test/monster/hole2.png`)" alt="bridge">
-      <img class="test-re-img" :src="require(`@/assets/img/test/monster/stop2.png`)" alt="stop">
-      <img class="test-re-img" :src="require(`@/assets/img/test/monster/bridge2.png`)" alt="hole">
-      <img class="test-re-img" :src="require(`@/assets/img/test/monster/cancer2.png`)" alt="cancer">
-      <img class="test-re-img" :src="require(`@/assets/img/test/monster/man2.png`)" alt="man">
+      <img v-if="!isShowMonster.hole" @mouseover="isShowMonster.hole = true" class="test-re-img" :src="require(`@/assets/img/test/monster/hole2.png`)" alt="bridge">
+      <img v-else class="test-re-img" @mouseleave="isShowMonster.hole = false" @click="introMonster('hole')" :src="require(`@/assets/img/test/monster/hole.png`)" alt="bridge">
       
-      <div class="test-re-btn-box">
-        <div class="test-re-btn">再玩一次</div>
-        <div class="test-re-btn">認識其他小怪奇</div>
+      <img v-if="!isShowMonster.stop" @mouseover="isShowMonster.stop = true" class="test-re-img" :src="require(`@/assets/img/test/monster/stop2.png`)" alt="stop">
+      <img v-else class="test-re-img" @mouseleave="isShowMonster.stop = false" @click="introMonster('stop')" :src="require(`@/assets/img/test/monster/stop.png`)" alt="stop">
+      
+      <img v-if="!isShowMonster.bridge" @mouseover="isShowMonster.bridge = true" class="test-re-img" :src="require(`@/assets/img/test/monster/bridge2.png`)" alt="hole">
+      <img v-else class="test-re-img" @mouseleave="isShowMonster.bridge = false" @click="introMonster('bridge')" :src="require(`@/assets/img/test/monster/bridge.png`)" alt="stop">
+      
+      <img v-if="!isShowMonster.cancer" @mouseover="isShowMonster.cancer = true" class="test-re-img" :src="require(`@/assets/img/test/monster/cancer2.png`)" alt="cancer">
+      <img v-else class="test-re-img" @mouseleave="isShowMonster.cancer = false" @click="introMonster('cancer')" :src="require(`@/assets/img/test/monster/cancer.png`)" alt="stop">
+      
+      <img v-if="!isShowMonster.man" @mouseover="isShowMonster.man = true" class="test-re-img" :src="require(`@/assets/img/test/monster/man2.png`)" alt="man">
+      <img v-else class="test-re-img" @mouseleave="isShowMonster.man = false" @click="introMonster('man')" :src="require(`@/assets/img/test/monster/man.png`)" alt="stop">
+      
+      <div v-if="isShowAgain" class="test-re-btn-box">
+        <img @click="isShowResult = '前言'" class="test-re-return" :src="require(`@/assets/img/test/return.png`)" alt="monster">
+        <div @click="isShowResult = '前言'" class="test-re-text">再玩一次</div>
+        <div @click="isShowAgain = false" class="test-re-btn">認識其他小怪奇</div>
+        <router-link :to="'/'" class="test-re-btn">了解怪奇</router-link>
       </div>
     </div>
 
@@ -249,7 +264,15 @@ export default {
           'reason': '為了用路人方便而建，而後卻又因不方便而被嫌棄，如今天橋被拆光光了，厭世心理只比通勤少一點。',
           'desc': '為了基隆人通行方便而建，成為城市的一道風景；卻又因都市成長，而成為多餘、甚至礙眼的存在，淪為一座一座被拆除的對象。<br>沒錯，你就是怪奇「天橋」。同為不再被城市需要的對象，你並不像「防空洞」一樣感到被遺棄，而是為自己的犧牲奉獻感到滿足。但是太過沈浸在對他人有貢獻的幻想中，可能會忘了為自己好好而活唷。可以再多照顧自己一點嗎？'
         },
-      }
+      },
+      isShowMonster: {
+        hole: false,
+        stop: false,
+        bridge: false,
+        cancer: false,
+        man: false
+      },
+      isShowAgain: true
     }
   },
   mounted () {
@@ -286,6 +309,7 @@ export default {
       if (this.qNum == 8) {
         this.isShowResult = '解答'
         this.calcMax()
+        this.cleanNum()
       }
     },
     calcMax () {
@@ -307,6 +331,34 @@ export default {
           this.result = '天橋'
           this.resultImg = 'bridge'
         }
+    },
+    introMonster (monster) {
+      this.isShowAgain = true
+      this.isShowResult = '解答'
+      if (monster == 'stop') {
+        this.result = '違停'
+        this.resultImg = 'stop'
+      } else if (monster == 'hole') {
+        this.result = '防空洞'
+        this.resultImg = 'hole'
+      } else if (monster == 'man') {
+        this.result = '咖啡渣'
+        this.resultImg = 'man'
+      } else if (monster == 'cancer') {
+        this.result = '壁癌'
+        this.resultImg = 'cancer'
+      } else {
+        this.result = '天橋'
+        this.resultImg = 'bridge'
+      }
+    },
+    cleanNum () {
+      this.qNum = 0
+      this.totalType.naive = 0
+      this.totalType.orphan = 0
+      this.totalType.wonderer = 0
+      this.totalType.fighter = 0
+      this.totalType.sacre = 0
     }
   },
   watch: {
@@ -412,6 +464,7 @@ export default {
       font-size: 14px;
       color: black;
       background-color: rgb(204, 200, 199);
+      cursor: pointer;
     }
   }
 
@@ -430,7 +483,7 @@ export default {
 
     &-img {
       width: 150px;
-      margin-top: 80px;
+      margin-top: 60px;
     }
 
     &-text {
@@ -446,6 +499,11 @@ export default {
       font-size: 22px;
       background-color: rgba(20, 75, 7, 0.6);
       border-radius: 30px;
+    }
+
+    &-next {
+      margin-top: 40px;
+      width: 30px;
       cursor: pointer;
     }
   }
@@ -493,18 +551,28 @@ export default {
     }
 
     &-desc {
+      position: relative;
       margin-top: 20px;
-      padding: 15px;
+      padding: 15px 20px 30px;
       line-height: 1.3;
       color: black;
       background-color: rgb(139, 138, 144);
       text-align: justify;
+    }
+
+    &-next {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      width: 30px;
+      cursor: pointer;
     }
   }
 
   &-re {
     position: relative;
     max-width: 380px;
+    width: 240px;
     min-height: calc(100vh - 28px);
     background-image: url('../assets/img/test/bg/bg4.jpg');
     background-repeat: no-repeat;
@@ -558,7 +626,24 @@ export default {
 
     &-btn-box {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       z-index: 1;
+    }
+
+    &-return {
+      width: 50px;
+      cursor: pointer;
+    }
+
+    &-text {
+      margin: 10px 0px 30px;
+      letter-spacing: 10px;
+      color: #96ff3c;
+      cursor: pointer;
     }
 
     &-btn {
