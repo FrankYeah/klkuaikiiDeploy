@@ -84,7 +84,9 @@
         </div>
         <div class="literacy-img-box">
           <img class="literacy-img" src="@/assets/img/literacy/11.jpg" alt="">
-          <img class="literacy-img literacy-img-animate" src="@/assets/img/literacy/12.png" alt="">
+          <router-link :to="'/'">
+            <img class="literacy-img literacy-img-animate" src="@/assets/img/literacy/12.png" alt="">
+          </router-link>
         </div>
       </div>
 
@@ -134,31 +136,29 @@ export default {
 <style lang="scss" scoped>
 
 .literacy {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('../assets/img/index/bg-blue.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: bottom;
+    background-position-y: center;
+  }
 
   &-bg {
     padding: 100px 80px 30px;
-    position: relative;
-
-    &::before {
-      content: '';
-      position: fixed;
-      z-index: -1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: url('../assets/img/index/bg-blue.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position-x: center;
-      background-position-y: center;
-    }
-
   }
 
   &-bg-normal {
     padding: 40px 80px;
-    background-color: rgb(17, 17, 82);
   }
 
   &-head {
@@ -264,9 +264,9 @@ export default {
     }
 
     &-img2 {
-      max-width: 250px;
+      max-width: 140px;
       width: 100%;
-      margin: 0px auto;
+      margin: 4px auto 0px;
     }
 
   }

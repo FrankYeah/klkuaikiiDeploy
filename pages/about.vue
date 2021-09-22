@@ -65,11 +65,22 @@ export default {
 .about {
   min-width: 100vw;
   min-height: 100vh;
-  background: url('../assets/img/index/bg-blue.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('../assets/img/index/bg-blue.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: bottom;
+    background-position-y: center;
+  }
 
   &-box {
     width: 70%;

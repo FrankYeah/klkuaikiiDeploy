@@ -42,7 +42,7 @@
 
     <!-- 解答 -->
     <div v-else-if="isShowResult == '解答'" class="test-result">
-      <img class="test-result-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="monster">
+      <img :class="['test-result-img', {'test-result-img-tall': resultImg == 'stop' || resultImg == 'cancer'}]" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="monster">
       <div class="test-result-text">你是</div>
       <div class="test-result-text-btn">{{ result }}</div>
       <img @click="isShowResult = '解說'" class="test-result-next" :src="require(`@/assets/img/test/next.png`)" alt="monster">
@@ -50,7 +50,12 @@
 
     <!-- 解說 -->
     <div v-else-if="isShowResult == '解說'" class="test-desc">
-      <img class="test-desc-img" :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="monster">
+      <img :src="require(`@/assets/img/test/monster/${resultImg}.png`)" alt="monster"
+        :class="['test-desc-img',
+          {'test-desc-img-small': resultImg == 'man' || resultImg == 'hole'},
+          {'test-desc-img-smaller': resultImg == 'bridge'}
+        ]"
+      >
       <div class="test-desc-name">{{ result }}</div>
       <div class="test-desc-sub">特性</div>
       <div v-html="resultText[`${resultImg}`].style" class="test-desc-text"></div>
@@ -85,7 +90,7 @@
         <img @click="isShowResult = '前言'" class="test-re-return" :src="require(`@/assets/img/test/return.png`)" alt="monster">
         <div @click="isShowResult = '前言'" class="test-re-text">再玩一次</div>
         <div @click="isShowAgain = false" class="test-re-btn">認識其他小怪奇</div>
-        <router-link :to="'/'" class="test-re-btn">了解怪奇</router-link>
+        <router-link :to="'/literacy'" class="test-re-btn">了解怪奇</router-link>
       </div>
     </div>
 
@@ -247,7 +252,7 @@ export default {
           'desc': '基隆從日本時期起就是空襲的主要目標，因而設置的防空洞多不勝數。在戰爭中庇護人們的你，吸收了人類的恐懼，卻在戰後被遺忘，甚至面臨封洞的命運，讓你感覺自己被拋棄。因此你總是感到不安，覺得他人、世界都是危險的，想尋找一個可以安心的所在。不過也許得自己踏出「洞外」，才有機會找到那個地方唷。'
         },
         'man': {
-          'style': '一但被鎖定便會根深柢固死纏爛打',
+          'style': '一但被鎖定<br>便會根深柢固死纏爛打',
           'class': '擾人現象',
           'reason': '基隆人家家戶戶必備，比蟑螂更頑強，尻不完、漆不去，擁有無限生命力，在人們煩燥中成形。',
           'desc': '你在多雨的基隆如魚得水，觸手深入每個家庭；你比蟑螂更頑強，比野草更會再生⋯⋯沒錯，你就是基隆人聞之色變的怪奇「壁癌」！與基隆嫁妝第一名「除濕機」為死對頭。你在與基隆人的鬥爭中，吸收他們的煩燥感而茁壯，天生就是個鬥士。越是艱困的處境，越能激起你的鬥志。但是，總是戰鬥的生活，會不會也有點累呢⋯⋯'
@@ -259,7 +264,7 @@ export default {
           'desc': '出現於基隆最潮時期，自覺高人一等、來自全球各地，不凡的生命在被烹煮成咖啡的瞬間就失去了意義，對存在的困惑生成了怪奇。<br>你是怪奇「咖啡渣」，無論何時總是自帶著某種歷盡滄桑的漂泊感，還有種淡淡的抑鬱。看似好相處，其實一直讓人很有距離感呢。你總是看著遠方，但會不會你所追尋的答案，就在眼前、腳下某個平凡的角落呢？'
         },
         'bridge': {
-          'style': '被厭惡而使人不想靠近',
+          'style': '被厭惡<br>使人不想靠近',
           'class': '消逝',
           'reason': '為了用路人方便而建，而後卻又因不方便而被嫌棄，如今天橋被拆光光了，厭世心理只比通勤少一點。',
           'desc': '為了基隆人通行方便而建，成為城市的一道風景；卻又因都市成長，而成為多餘、甚至礙眼的存在，淪為一座一座被拆除的對象。<br>沒錯，你就是怪奇「天橋」。同為不再被城市需要的對象，你並不像「防空洞」一樣感到被遺棄，而是為自己的犧牲奉獻感到滿足。但是太過沈浸在對他人有貢獻的幻想中，可能會忘了為自己好好而活唷。可以再多照顧自己一點嗎？'
@@ -369,22 +374,36 @@ export default {
 
 <style lang="scss" scoped>
 
+@keyframes blink {
+	0% {
+			opacity: 1;
+	}
+	80% {
+			opacity: 1;
+	}
+	81% {
+			opacity: 0;
+	}
+	100% {
+			opacity: 0;
+	}
+}
+
 .test {
   display: flex;
   justify-content: center;
   background-color: rgb(60, 60, 60);
+  min-height: 100vh;
 
   &-pre {
     position: relative;
-    max-width: 440px;
-    min-height: calc(100vh - 28px);
     background-image: url('../assets/img/test/bg/bg1.jpg');
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: center;
     background-position-y: center;
     background-attachment: fixed;
-    padding: 14px 30px;
+    padding: 0px 30px 14px;
 
     &-img-box {
       text-align: right;
@@ -394,15 +413,15 @@ export default {
       position: absolute;
       top: 20px;
       right: 80px;
-      width: 130px;
+      width: 150px;
     }
 
     &-text-box {
-      margin-top: 170px;
+      margin-top: 210px;
     }
 
-    &-text { 
-      font-size: 14px;
+    &-text {
+      font-size: 18px;
       line-height: 1.5;
     }
 
@@ -424,9 +443,8 @@ export default {
   }
 
   &-qa {
+    width: 100%;
     position: relative;
-    max-width: 300px;
-    min-height: calc(100vh - 28px);
     background-image: url('../assets/img/test/bg/bg2.jpg');
     background-repeat: no-repeat;
     background-size: contain;
@@ -452,16 +470,15 @@ export default {
     }
 
     &-question {
-      font-size: 18px;
+      font-size: 20px;
       margin-bottom: 16px;
       line-height: 1.5;
     }
 
     &-answer {
-      width: 260px;
       margin-top: 12px;
       padding: 10px 10px;
-      font-size: 14px;
+      font-size: 18px;
       color: black;
       background-color: rgb(204, 200, 199);
       cursor: pointer;
@@ -470,7 +487,6 @@ export default {
 
   &-result {
     position: relative;
-    max-width: 380px;
     min-height: calc(100vh - 28px);
     text-align: center;
     background-image: url('../assets/img/test/bg/bg3.jpg');
@@ -479,15 +495,18 @@ export default {
     background-position-x: center;
     background-position-y: center;
     background-attachment: fixed;
-    padding: 14px 60px;
 
     &-img {
-      width: 150px;
+      width: 250px;
       margin-top: 60px;
     }
 
+    &-img-tall {
+      width: 150px;
+    }
+
     &-text {
-      font-size: 18px;
+      font-size: 20px;
     }
 
     &-text-btn {
@@ -496,7 +515,7 @@ export default {
       padding: 6px 0px 6px 16px;
       letter-spacing: 16px;
       text-align: center;
-      font-size: 22px;
+      font-size: 24px;
       background-color: rgba(20, 75, 7, 0.6);
       border-radius: 30px;
     }
@@ -510,7 +529,6 @@ export default {
 
   &-desc {
     position: relative;
-    max-width: 380px;
     min-height: calc(100vh - 28px);
     background-image: url('../assets/img/test/bg/bg4.jpg');
     background-repeat: no-repeat;
@@ -518,13 +536,21 @@ export default {
     background-position-x: center;
     background-position-y: center;
     background-attachment: fixed;
-    padding: 14px 60px;
+    padding: 10px 20px;
 
     &-img {
       position: absolute;
       right: 36px;
       top: 90px;
-      height: 160px;
+      height: 180px;
+    }
+
+    &-img-small {
+      height: 150px;
+    }
+
+    &-img-smaller {
+      height: 130px;
     }
 
     &-name {
@@ -533,7 +559,7 @@ export default {
       padding: 6px 0px 6px 6px;
       letter-spacing: 6px;
       text-align: center;
-      font-size: 18px;
+      font-size: 24px;
       color: black;
       background-color:#96ff3c;
       border-radius: 30px;
@@ -542,12 +568,14 @@ export default {
     &-sub {
       margin-top: 24px;
       color: #96ff3c;
+      font-size: 20px;
     }
 
     &-text {
       margin-top: 6px;
       line-height: 1.3;
       text-align: justify;
+      font-size: 18px;
     }
 
     &-desc {
@@ -558,6 +586,7 @@ export default {
       color: black;
       background-color: rgb(139, 138, 144);
       text-align: justify;
+      font-size: 18px;
     }
 
     &-next {
@@ -592,26 +621,48 @@ export default {
         width: 160px;
         top: 10px;
         left: 20px;
+	      animation-delay: 1s;
+	      animation-duration: 0.6s;
+        animation-name: blink;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
       }
 
       &:nth-child(2) {
         width: 80px;
         top: 30px;
         right: 20px;
-        
+	      animation-delay: 2s;
+	      animation-duration: 0.6s;
+        animation-name: blink;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
       }
 
       &:nth-child(3) {
         width: 220px;
         top: 140px;
         left: 70px;
-        
+	      animation-delay: 3s;
+        animation-duration: 0.6s;
+        animation-name: blink;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
       }
 
       &:nth-child(4) {
         width: 120px;
         top: 260px;
         left: 10px;
+	      animation-delay: 4s;
+        animation-duration: 0.6s;
+        animation-name: blink;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
         
       }
 
@@ -619,6 +670,12 @@ export default {
         width: 200px;
         top: 280px;
         right: 10px;
+	      animation-delay: 5s;
+        animation-duration: 0.6s;
+        animation-name: blink;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
         
       }
 

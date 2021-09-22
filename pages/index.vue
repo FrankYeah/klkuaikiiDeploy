@@ -357,12 +357,12 @@ export default {
   &-video {
     background-color: rgb(17, 17, 82);
     position: relative;
-    width: 100%;
-    height: 100vh;
+    width: 100vw;
+    height: 100%;
     
     &-box {
-      width: 100%;
-      height: 100vh;
+      width: 100vw;
+      height: 100%;
     }
   }
 
@@ -377,7 +377,7 @@ export default {
 
     &-head-box {
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
     }
 
@@ -386,7 +386,7 @@ export default {
     }
 
     &-hand-img {
-      width: 500px;
+      width: 52vw;
       transform: rotate(20deg) scaleX(-1);
     }
 
@@ -464,7 +464,7 @@ export default {
       height: 600px;
       line-height: 2;
       margin-right: 100px;
-      font-size: 20px;
+      font-size: 19px;
       color: white;
       z-index: 2;
 
@@ -565,7 +565,7 @@ export default {
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
-      background-position-y: center;
+      background-position-y: bottom;
     }
 
     &-text-box {
@@ -606,8 +606,8 @@ export default {
     }
 
     &-bg {
-      width: 500px;
-      height: 500px;
+      width: 568px;
+      height: 660px;
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -618,7 +618,7 @@ export default {
     &-text-box {
       position: absolute;
       right: 60px;
-      width: 344px;
+      width: 410px;
       line-height: 2;
       font-size: 20px;
       color: white;
@@ -626,7 +626,7 @@ export default {
     }
 
     &-text {
-      font-size: 16px;
+      font-size: 19px;
       margin: 20px 0px;
     }
   }
