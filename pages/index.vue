@@ -19,14 +19,14 @@
     </div>
 
     <!-- 怪奇逃走中 -->
-    <contentBox class="index-intro">
+    <contentBox ref="top" class="index-intro">
       <div class="index-intro-head-box">
         <img class="index-intro-run-img" src="@/assets/img/index/text-main.png" alt="run">
         <img class="index-intro-hand-img" src="@/assets/img/index/monster-hand.png" alt="hand">
       </div>
       <div class="index-intro-text-box">
         <div class="index-intro-text-left">
-          <div class="index-intro-text">混血實驗是轉機？或是衝突開端？</div>
+          <div @click="scrollToRef()" class="index-intro-text">混血實驗是轉機？或是衝突開端？</div>
           <div class="index-intro-text">究竟追尋真相重要？ 還是選擇重要？</div>
         </div>
         <div class="index-intro-text-right">
@@ -43,7 +43,7 @@
     </contentBox>
 
     <!-- 關於怪奇 -->
-    <contentBox class="index-about">
+    <contentBox ref="about" class="index-about">
       <div class="index-about-box">
         <div class="index-about-text">
           <div>是由無生命體演變而成，因累積過多人類情緒而產生意識，變成有生命體，如妖怪般的存在。每個怪奇之怪力皆不相同，怪力等級也因生成時累積的情緒而有所差異，目前基隆地區捕獲最強四大怪奇為旭川河、林開郡洋樓、委託行、通勤；一般人平時無法看見怪奇，唯有怪奇同類，或是觀察力異常細微之人才能看見。</div>
@@ -55,7 +55,7 @@
     </contentBox>
 
     <!-- 旭川與露露 -->
-    <contentBox class="index-role">
+    <contentBox ref="run" class="index-role">
       <div class="index-role-box">
         <div @mouseover="isShowCardText.river = true" @mouseleave="isShowCardText.river = false"
           class="index-role-img"
@@ -86,7 +86,7 @@
 
 
     <!-- 平行時空 -->
-    <contentBox class="index-pall">
+    <contentBox ref="time" class="index-pall">
       <div class="index-pall-text-box">
         <div class="index-pall-text">一場平行時空的旅程</div>
         <div class="index-pall-text">這個路上你將會遇見誰</div>
@@ -102,7 +102,7 @@
 
 
     <!-- 怪奇博物館 -->
-    <contentBox class="index-musium">
+    <contentBox ref="musium" class="index-musium">
       <div class="index-musium-box">
         <div class="index-musium-text-box">
           <div class="index-musium-text">「怪奇博物館」為世界公認研究、捕捉及管理怪奇之唯一官方組織,為防止怪奇危害人類、破壞環境,因此招集具有察覺怪奇能力之人,共同研究並擬定捕捉策略,將怪奇統一管理避免傷害,若有必要則進行銷毀怪奇之工作,維持人類世界之和平運作。</div>
@@ -116,7 +116,7 @@
 
 
     <!-- QA -->
-    <contentBox class="index-qa">
+    <contentBox ref="qa" class="index-qa">
 
       <div class="index-qa-box">
 
@@ -299,6 +299,10 @@
 
     <!-- footer -->
     <bottomBar/>
+    <!-- sidebar -->
+    <sideBar @scrollToRefs="scrollToRef" />
+    <!-- topbar -->
+    <topBar @scrollToRefs="scrollToRef" />
 
   </div>
 </template>
@@ -311,6 +315,8 @@ export default {
   },
   layout: 'default',
   components: {
+    topBar: require('~/components/top-bar.vue').default, 
+    sideBar: require('~/components/side-bar.vue').default, 
     bottomBar: require('~/components/bottom-bar.vue').default, 
     contentBox: require('~/components/content-box.vue').default, 
   },
@@ -342,7 +348,11 @@ export default {
 
   },
   methods: {
-    
+    scrollToRef(id) {
+      this.$nextTick(() => {
+        this.$refs[id].$el.scrollIntoView({ behavior: 'smooth' })
+      })
+    }
   },
   watch: {
     
