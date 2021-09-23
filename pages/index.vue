@@ -22,7 +22,7 @@
     <contentBox ref="top" class="index-intro">
       <div class="index-intro-head-box">
         <img class="index-intro-run-img" src="@/assets/img/index/text-main.png" alt="run">
-        <img class="index-intro-hand-img" src="@/assets/img/index/monster-hand.png" alt="hand">
+        <div class="index-intro-hand-img"></div>
       </div>
       <div class="index-intro-text-box">
         <div class="index-intro-text-left">
@@ -49,7 +49,8 @@
           <div>是由無生命體演變而成，因累積過多人類情緒而產生意識，變成有生命體，如妖怪般的存在。每個怪奇之怪力皆不相同，怪力等級也因生成時累積的情緒而有所差異，目前基隆地區捕獲最強四大怪奇為旭川河、林開郡洋樓、委託行、通勤；一般人平時無法看見怪奇，唯有怪奇同類，或是觀察力異常細微之人才能看見。</div>
           
         </div>
-        <img class="index-about-img-hand" src="@/assets/img/index/monster-hand.png" alt="game">
+        <div class="index-about-img-hand"></div>
+        <!-- <img src="@/assets/img/index/monster-hand.png" alt="game"> -->
         <div class="index-about-head">關於怪奇</div>
       </div>
     </contentBox>
@@ -174,43 +175,43 @@
                <a class="index-team-icon" href="https://www.facebook.com/%E6%88%80%E6%88%80%E6%96%87%E5%AE%89-%E5%9F%BA%E9%9A%86%E6%96%87%E5%AE%89%E7%A4%BE%E5%8D%80-408355896023365" target="_blank">f</a>
             </div>
           </div>
-          <div class="index-team-text">+</div>
+          <div class="index-team-text index-team-plus">+</div>
           <div @mouseover="isShowDesc.youwant = true" @mouseleave="isShowDesc.youwant = false"
             class="index-team-text"
           >
             <div v-if="isShowDesc.youwant" class="index-team-popup">
               <div>慾望劇團</div>
               <br>
-              <div>地方活動設計</div>
+              <div>基隆在地劇團</div>
               <br>
-              <div>無用是一種精神，而學堂只是延伸</div>
+              <div>擅長挖掘在地故事並改編成戲劇演出</div>
               <br>
-              <div>在這個以雨為名的城市，發起無數溫暖的地方生活實驗</div>
+              <div>「透過戲劇拉近人與人之間的距離，並傳達愛與感動。」</div>
             </div>
             <div class="index-team-text-inner">
               <div>慾望劇團</div>
               <a class="index-team-icon" href="https://www.facebook.com/desiretroupe" target="_blank">f</a>
             </div>
           </div>
-          <div class="index-team-text">+</div>
+          <div class="index-team-text index-team-none">+</div>
           <div @mouseover="isShowDesc.frog = true" @mouseleave="isShowDesc.frog = false"
             class="index-team-text"
           >
             <div v-if="isShowDesc.frog" class="index-team-popup">
               <div>阿普蛙</div>
               <br>
-              <div>地方活動設計</div>
+              <div>基隆在地社企</div>
               <br>
-              <div>無用是一種精神，而學堂只是延伸</div>
+              <div>希望透過遊戲的方式讓人認識社會議題，</div>
               <br>
-              <div>在這個以雨為名的城市，發起無數溫暖的地方生活實驗</div>
+              <div>推廣公民教育，為社會帶來正面的影響力。</div>
             </div>
             <div class="index-team-text-inner">
               <div>阿普蛙</div>
                <a class="index-team-icon" href="https://www.wasupstudio.com/" target="_blank">W</a>
             </div>
           </div>
-          <div class="index-team-text">+</div>
+          <div class="index-team-text index-team-plus">+</div>
           <div @mouseover="isShowDesc.use = true" @mouseleave="isShowDesc.use = false"
             class="index-team-text"
           >
@@ -228,25 +229,25 @@
               <a class="index-team-icon" href="https://www.facebook.com/KeelungLifeLab" target="_blank">F</a>
             </div>
           </div>
-          <div class="index-team-text">+</div>
+          <div class="index-team-text index-team-none">+</div>
           <div @mouseover="isShowDesc.siddharam = true" @mouseleave="isShowDesc.siddharam = false"
             class="index-team-text"
           >
             <div v-if="isShowDesc.siddharam" class="index-team-popup">
               <div>西打藍</div>
               <br>
-              <div>地方活動設計</div>
+              <div>寫程式的文字人</div>
               <br>
-              <div>無用是一種精神，而學堂只是延伸</div>
+              <div>記者、前端工程師、自營工作者</div>
               <br>
-              <div>在這個以雨為名的城市，發起無數溫暖的地方生活實驗</div>
+              <div>以基隆為根、愛好思考的西打藍</div>
             </div>
             <div class="index-team-text-inner">
               <div>西打藍</div>
               <a class="index-team-icon" href="https://siddharam.com.tw/" target="_blank">W</a>
             </div>
           </div>
-          <div class="index-team-text">+</div>
+          <div class="index-team-text index-team-plus">+</div>
           <div @mouseover="isShowDesc.ding = true" @mouseleave="isShowDesc.ding = false"
             class="index-team-text"
           >
@@ -255,9 +256,9 @@
               <br>
               <div>地方活動設計</div>
               <br>
-              <div>無用是一種精神，而學堂只是延伸</div>
+              <div>一個地球人類。正在練習自己內在跟外在的平衡</div>
               <br>
-              <div>在這個以雨為名的城市，發起無數溫暖的地方生活實驗</div>
+              <div>觀察自己觀察世界，在這世界玩～</div>
             </div>
             <div class="index-team-text-inner">
               <div>叮叮咚咚</div>
@@ -367,11 +368,11 @@ export default {
   &-video {
     background-color: rgb(17, 17, 82);
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     
     &-box {
-      width: 100vw;
+      width: 100%;
       height: 100%;
     }
   }
@@ -392,11 +393,17 @@ export default {
     }
 
     &-run-img {
-      width: 400px;
+      width: 30vw;
     }
 
     &-hand-img {
-      width: 52vw;
+      background-image: url('../assets/img/index/monster-hand.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: center;
+      width: 660px;
+      height: 330px;
       transform: rotate(20deg) scaleX(-1);
     }
 
@@ -486,9 +493,15 @@ export default {
 
     &-img-hand {
       width: 500px;
+      height: 200px;
       position: absolute;
       top: 50px;
-      right: 10%;
+      right: calc(45% - 403px);
+      background-image: url('../assets/img/index/monster-hand.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: center;
       transform: rotate(-30deg);
       pointer-events: none;
       z-index: 1;
@@ -768,6 +781,10 @@ export default {
 
 }
 
+// ----------------------------------------------------
+
+// ----------------------------------------------------
+
 @media( max-width: 1023px ){
 
 .index {
@@ -781,18 +798,26 @@ export default {
   }
 
   &-intro {
-    
+    padding: 40px 0px 30px;
 
     &-head-box {
-      flex-direction: column;
+      position: relative;
+      justify-content: flex-start;
     }
 
     &-run-img {
-      width: 280px;
+      width: 250px;
+      margin-left: 30px;
     }
 
     &-hand-img {
-      width: 240px;
+      position: absolute;
+      top: -40px;
+      right: 10px;
+      width: 50vw;
+      height: 100px;
+      background-position-x: right;
+      transform: rotate(10deg) scaleX(-1);
     }
 
     &-text-box {
@@ -800,25 +825,26 @@ export default {
     }
 
     &-text-left {
-      margin: 0px;
-      text-align: center;
+      width: 60%;
+      margin: 40px auto;
     }
 
     &-text {
-      
+      line-height: 1.5;
     }
 
     &-text-right {
-      margin-top: 20px;
+      margin: 20px auto;
       text-align: center;
     }
 
     &-text-img {
-
+      margin-bottom: 20px;
     }
 
     &-text-green {
-      
+      margin: 10px auto 0px 40px;
+      text-align: left;
     }
 
     &-about-box {
@@ -826,7 +852,7 @@ export default {
     }
 
     &-about {
-      margin: 30px auto 0px;
+      margin: 20px auto;
     }
 
   }
@@ -852,14 +878,18 @@ export default {
     }
 
     &-img-hand {
-      width: 240px;
-      top: -114px;
-      right: 10%;
-      transform: rotate(-30deg);
+      width: 60vw;
+      height: 100px;
+      top: -32px;
+      left: -40px;
+      background-position-x: right;
+      transform: rotate(-18deg);
     }
 
     &-head {
-      margin-bottom: 20px;
+      width: 100%;
+      margin: 30px 0px;
+      text-align: right;
     }
   }
 
@@ -979,12 +1009,13 @@ export default {
   }
   
   &-team {
-    flex-wrap: wrap;
+    flex-direction: column;
 
     &-box {
       
 
       &:first-child {
+        width: 100%;
 
         & .index-team-icon-box {
           
@@ -996,12 +1027,10 @@ export default {
       }
 
       &:last-child {
-        
+        width: 100%;
 
         & .index-team-text-inner div {
-          width: auto;
-          height: 20px;
-          margin-bottom: 10px;
+          
         }
 
         & .index-team-icon {
@@ -1015,50 +1044,59 @@ export default {
     }
 
     &-line {
-      margin: 12px 0px;
+      margin: 14px 0px 40px;
     }
 
     &-text-box {
-      
+      flex-wrap: wrap;
     }
 
     &-text {
-      font-size: 14px;
+      width: 40%;
+      margin-bottom: 40px;
 
       &:nth-child(1) .index-team-popup {
-        left: 0px;
+        
       }
 
       &:nth-child(3) .index-team-popup {
-        left: -40px;
+        left: 20px;
       }
 
       &:nth-child(5) .index-team-popup {
-        left: -80px;
+        
       }
 
       &:nth-child(7) .index-team-popup {
-        left: -130px;
+        right: 20px;
       }
 
       &:nth-child(9) .index-team-popup {
-        left: -160px;
+        
       }
 
       &:nth-child(11) .index-team-popup {
-        left: -200px;
+        right: 20px;
       }
     }
 
+    &-plus {
+      width: 10%;
+    }
+
+    &-none {
+      display: none;
+    }
+
     &-text-inner {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+
+      & div:first-child {
+        margin-bottom: 10px;
+      }
+      
 
       & div {
-        height: 60px;
-        width: 20px;
+        
       }
     }
 
@@ -1067,14 +1105,11 @@ export default {
     }
 
     &-icon {
-      font-size: 24px;
+      
     }
 
     &-popup {
-      bottom: 115px;
-      padding: 10px;
-      font-size: 14px;
-      left: 20px;
+      
 
       & div {
         
@@ -1082,14 +1117,11 @@ export default {
     }
 
     &-popup-city {
-      left: -50px !important;
+      
     }
 
     &-feat {
-      width: 100%;
-      margin: 20px 0px;
-      font-size: 16px;
-      text-align: center;
+      margin: 30px 0px 20px;
     }
   }
 
