@@ -238,9 +238,9 @@
               <br>
               <div>寫程式的文字人</div>
               <br>
-              <div>記者、前端工程師、自營工作者</div>
+              <div>記者、前端工程師、自由工作者</div>
               <br>
-              <div>以基隆為根、愛好思考的西打藍</div>
+              <div>以基隆為根、愛好思考，實現各式生活的多棲人生</div>
             </div>
             <div class="index-team-text-inner">
               <div>西打藍</div>
