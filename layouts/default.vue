@@ -1,6 +1,5 @@
 <template>
   <div>
-    <topBar/>
     <nuxt/>
   </div>
 </template>
@@ -9,7 +8,7 @@
 
 export default {
   components: {
-    topBar: require('~/components/top-bar.vue').default,
+
   },
   props: {
 
