@@ -21,11 +21,24 @@
     <!-- 怪奇逃走中 -->
     <contentBox ref="top" class="index-intro">
       <div class="index-intro-head-box">
-        <img class="index-intro-run-img" src="@/assets/img/index/text-main.png" alt="run">
-        <div class="index-intro-hand-img"></div>
+        <img class="index-intro-run-img wow animate__fadeInRight" src="@/assets/img/index/text-main.png" alt="run"
+          data-wow-duration="1s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        
+        >
+        <div class="index-intro-hand-img wow animate__zoomInRight"
+          data-wow-duration="2s"
+          data-wow-delay="s"
+          data-wow-iteration="1"
+        ></div>
       </div>
       <div class="index-intro-text-box">
-        <div class="index-intro-text-left">
+        <div class="index-intro-text-left wow animate__fadeIn"
+          data-wow-duration="1s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        >
           <div @click="scrollToRef()" class="index-intro-text">混血實驗是轉機？或是衝突開端？</div>
           <div class="index-intro-text">究竟追尋真相重要？ 還是選擇重要？</div>
         </div>
@@ -49,7 +62,11 @@
           <div>是由無生命體演變而成，因累積過多人類情緒而產生意識，變成有生命體，如妖怪般的存在。每個怪奇之怪力皆不相同，怪力等級也因生成時累積的情緒而有所差異，目前基隆地區捕獲最強四大怪奇為旭川河、林開郡洋樓、委託行、通勤；一般人平時無法看見怪奇，唯有怪奇同類，或是觀察力異常細微之人才能看見。</div>
           
         </div>
-        <div class="index-about-img-hand"></div>
+        <div class="index-about-img-hand wow animate__fadeInBottomLeft"
+          data-wow-duration="1s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        ></div>
         <!-- <img src="@/assets/img/index/monster-hand.png" alt="game"> -->
         <div class="index-about-head">關於怪奇</div>
       </div>
@@ -61,7 +78,12 @@
         <div @mouseover="isShowCardText.river = true" @mouseleave="isShowCardText.river = false"
           class="index-role-img"
         >
-          <img class="index-role-img-hunt" src="@/assets/img/index/text-hunt.png" alt="hunt">
+          <img class="index-role-img-hunt wow animate__flipInX"
+            src="@/assets/img/index/text-hunt.png" alt="hunt"
+            data-wow-duration="1s"
+            data-wow-delay="0s"
+            data-wow-iteration="1"
+          >
           <transition name="fade">
             <div v-if="isShowCardText.river" class="index-role-text-box">
               <div class="index-role-head">旭川</div>
@@ -73,7 +95,12 @@
         <div @mouseover="isShowCardText.lulu = true" @mouseleave="isShowCardText.lulu = false"
           class="index-role-img index-role-img-2"
         >
-          <img class="index-role-img-hunt" src="@/assets/img/index/text-hunt.png" alt="hunt">
+          <img class="index-role-img-hunt wow animate__flipInX"
+            src="@/assets/img/index/text-hunt.png" alt="hunt"
+            data-wow-duration="1s"
+            data-wow-delay="0s"
+            data-wow-iteration="1"
+          >
           <transition name="fade">
             <div v-if="isShowCardText.lulu" class="index-role-text-box">
               <div class="index-role-head">露露</div>
@@ -88,7 +115,11 @@
 
     <!-- 平行時空 -->
     <contentBox ref="time" class="index-pall">
-      <div class="index-pall-text-box">
+      <div class="index-pall-text-box wow animate__fadeInRight"
+        data-wow-duration="1s"
+        data-wow-delay="0s"
+        data-wow-iteration="1"
+      >
         <div class="index-pall-text">一場平行時空的旅程</div>
         <div class="index-pall-text">這個路上你將會遇見誰</div>
         <br>
@@ -98,14 +129,24 @@
         <div class="index-pall-text">就等你開始探索</div>
         <div class="index-pall-text">你的真實身分</div>
       </div>
-      <img class="index-pall-img" src="@/assets/img/index/monster-bird.png" alt="bird">
+      <a href="https://frankyeah.github.io/klkuaiki/index.html" target="_blank">
+        <img class="index-pall-img wow animate__rubberBand" src="@/assets/img/index/monster-bird.png" alt="bird"
+          data-wow-duration="1s"
+          data-wow-delay="0s"
+          data-wow-iteration="infinite"
+        >
+      </a>
     </contentBox>
 
 
     <!-- 怪奇博物館 -->
     <contentBox ref="musium" class="index-musium">
       <div class="index-musium-box">
-        <div class="index-musium-text-box">
+        <div class="index-musium-text-box wow animate__fadeIn"
+          data-wow-duration="1s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        >
           <div class="index-musium-text">「怪奇博物館」為世界公認研究、捕捉及管理怪奇之唯一官方組織,為防止怪奇危害人類、破壞環境,因此招集具有察覺怪奇能力之人,共同研究並擬定捕捉策略,將怪奇統一管理避免傷害,若有必要則進行銷毀怪奇之工作,維持人類世界之和平運作。</div>
           <div class="index-musium-text">組織總部設於英國倫敦,並於世界各地皆有分部,台灣分部自1960年起設於基隆港,因是地下秘密組織,原始核心成員又皆於任務中歿世,故確切成立時間已不可考。目前館長為第十五任Dr.張中元。</div>
         </div>
@@ -310,6 +351,10 @@
 
 <script>
 
+if (process.browser) { // Here we introduce... According to the environment wow.js
+  var {WOW} = require('wowjs')
+}
+
 export default {
   head: {
     title: '首頁',
@@ -344,6 +389,21 @@ export default {
   mounted () {
     var mediaElem = document.querySelector("video")
     mediaElem.load()
+
+    // wow
+    this.$nextTick(() => {
+      if (process.browser) { // On the page mounted In the life cycle Instantiate according to the environment WOW
+        new WOW({
+          boxClass: 'wow', // 欲套用wow.js的class
+          animateClass: 'animated', // 欲修改設定animat.css 的類別名稱
+          offset: 0, // 當用戶滾動並到達這個距離時才開始執行動畫
+          mobile: true, // 是否在行動裝置上執行動畫
+          live: false, // 非同步產生的內容是否要套用
+          callback: null,
+          scrollContainer: null
+        }).init()
+      }
+    })
   },
   computed: {
 
@@ -607,6 +667,10 @@ export default {
       left: 15%;
       bottom: 50px;
       width: 100px;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 

@@ -75,6 +75,7 @@ export default {
     '~assets/fonts/goudy/goudy.css',
     '~assets/fonts/lato/lato.css',
     'swiper/swiper-bundle.css',
+    'animate.css/animate.css',
   ],
   /*@nuxtjs/style-resources*/
   styleResources: {
