@@ -1004,8 +1004,9 @@ export default {
     }
 
     &-text-box {
-      left: 20px;
-      width: 250px;
+      bottom: 0px;
+      left: 0px;
+      width: 288px;
       padding: 20px 6px;
     }
 
