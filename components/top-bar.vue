@@ -108,7 +108,7 @@ export default {
       margin-top: 32px;
       text-align: center;
       color: white;
-      font-size: 22px;
+      font-size: 16px;
       font-weight: bold;
     }
   }

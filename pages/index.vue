@@ -115,19 +115,39 @@
 
     <!-- 平行時空 -->
     <contentBox ref="time" class="index-pall">
-      <div class="index-pall-text-box wow animate__fadeInRight"
-        data-wow-duration="1s"
-        data-wow-delay="0s"
-        data-wow-iteration="1"
-      >
-        <div class="index-pall-text">一場平行時空的旅程</div>
-        <div class="index-pall-text">這個路上你將會遇見誰</div>
+      <div class="index-pall-text-box">
+        <div class="index-pall-text wow animate__fadeIn"
+          data-wow-duration="1s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        >一場平行時空的旅程</div>
+        <div class="index-pall-text wow animate__fadeIn"
+          data-wow-duration="3s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        >這個路上你將會遇見誰</div>
         <br>
-        <div class="index-pall-text">又看見什麼</div>
-        <div class="index-pall-text">隱藏在這座城市的秘密</div>
+        <div class="index-pall-text wow animate__fadeIn"
+          data-wow-duration="5s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        >又看見什麼</div>
+        <div class="index-pall-text wow animate__fadeIn"
+          data-wow-duration="7s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        >隱藏在這座城市的秘密</div>
         <br>
-        <div class="index-pall-text">就等你開始探索</div>
-        <div class="index-pall-text">你的真實身分</div>
+        <div class="index-pall-text wow animate__fadeIn"
+          data-wow-duration="9s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        >就等你開始探索</div>
+        <div class="index-pall-text wow animate__fadeIn"
+          data-wow-duration="11s"
+          data-wow-delay="0s"
+          data-wow-iteration="1"
+        >你的真實身分</div>
       </div>
       <a href="https://frankyeah.github.io/klkuaiki/index.html" target="_blank">
         <img class="index-pall-img wow animate__rubberBand" src="@/assets/img/index/monster-bird.png" alt="bird"
@@ -205,11 +225,9 @@
             <div v-if="isShowDesc.community" class="index-team-popup">
               <div>文安社區</div>
               <br>
-              <div>地方活動設計</div>
+              <div>座落市區的古老社區，也是基隆社造的元老級社區。</div>
               <br>
-              <div>無用是一種精神，而學堂只是延伸</div>
-              <br>
-              <div>在這個以雨為名的城市，發起無數溫暖的地方生活實驗</div>
+              <div>以文史帶領居民認同在地、以多元串連地方資源整合、以社區跨出社區的社造想像。</div>
             </div>
             <div class="index-team-text-inner">
               <div>文安社區</div>
@@ -294,8 +312,6 @@
           >
             <div v-if="isShowDesc.ding" class="index-team-popup">
               <div>叮叮咚咚</div>
-              <br>
-              <div>地方活動設計</div>
               <br>
               <div>一個地球人類。正在練習自己內在跟外在的平衡</div>
               <br>
@@ -479,7 +495,7 @@ export default {
 
     &-text {
       margin-top: 10px;
-      font-size: 22px;
+      font-size: 17px;
     }
 
     &-text-right {
@@ -623,11 +639,12 @@ export default {
     }
 
     &-head {
-      font-size: 30px;
+      font-size: 22px;
     }
 
     &-text {
       margin-top: 20px;
+      font-size: 14px;
       line-height: 1.6;
     }
   }
@@ -826,7 +843,7 @@ export default {
 
     &-popup {
       position: absolute;
-      bottom: 28px;
+      bottom: 90px;
       width: 200px;
       padding: 20px;
       color: white;
@@ -908,6 +925,7 @@ export default {
 
     &-text-green {
       margin: 10px auto 0px 40px;
+      font-size: 13px;
       text-align: left;
     }
 
@@ -937,7 +955,7 @@ export default {
 
       & div {
         transform: none;
-        font-size: 14px;
+        font-size: 13px;
       }
     }
 
@@ -953,6 +971,7 @@ export default {
     &-head {
       width: 100%;
       margin: 30px 0px;
+      font-size: 18px;
       text-align: right;
     }
   }
@@ -1007,7 +1026,7 @@ export default {
     }
 
     &-text {
-      
+      font-size: 13px;
     }
 
     &-img {
@@ -1041,7 +1060,7 @@ export default {
 
     &-text {
       margin: 20px 0px 0px;
-      font-size: 14px;
+      font-size: 13px;
       color: #111152;
     }
   }
@@ -1059,15 +1078,15 @@ export default {
     }
 
     &-question {
-      
+      font-size: 13px;
     }
 
     &-answer {
-      font-size: 14px;
+      font-size: 13px;
     }
 
     &-hint {
-      font-size: 14px;
+      font-size: 13px;
       text-align: center;
     }
   }
@@ -1104,7 +1123,7 @@ export default {
     }
 
     &-head {
-      font-size: 24px;
+      font-size: 19px;
     }
 
     &-line {
@@ -1124,7 +1143,7 @@ export default {
       }
 
       &:nth-child(3) .index-team-popup {
-        left: 20px;
+        right: 20px;
       }
 
       &:nth-child(5) .index-team-popup {
@@ -1153,6 +1172,7 @@ export default {
     }
 
     &-text-inner {
+      font-size: 18px;
 
       & div:first-child {
         margin-bottom: 10px;
@@ -1176,7 +1196,7 @@ export default {
       
 
       & div {
-        
+        font-size: 16px;
       }
     }
 
@@ -1186,6 +1206,7 @@ export default {
 
     &-feat {
       margin: 30px 0px 20px;
+      font-size: 15px;
     }
   }
 
