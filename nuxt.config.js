@@ -68,6 +68,7 @@ export default {
         overrideBrowserslist: ['last 3 versions', '> 1%', 'ie 8', 'ie 7'],
       }
     },
+    vendor: ['vue-lazyload']
   },
   css: [
     '~assets/styles/global.css',
@@ -92,7 +93,8 @@ export default {
   plugins: [
     '~/plugins/vue-multiselect.js',
     '~/plugins/component.js',
-    '~/plugins/vue-awesome-swiper'
+    '~/plugins/vue-awesome-swiper',
+    { src: '~/plugins/vue-lazyload', ssr: true },
   ],
   modules: [
     '@nuxtjs/pwa',

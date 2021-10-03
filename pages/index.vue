@@ -19,15 +19,16 @@
     </div>
 
     <!-- 怪奇逃走中 -->
-    <contentBox ref="top" class="index-intro">
+    <contentBox ref="top" v-lazy:background-image="require('@/assets/img/index/bg-blue.png')" class="index-intro">
       <div class="index-intro-head-box">
-        <img class="index-intro-run-img wow animate__fadeInRight" src="@/assets/img/index/text-main.png" alt="run"
+        <img class="index-intro-run-img wow animate__fadeInRight" v-lazy="require('@/assets/img/index/text-main.png')" alt="run"
           data-wow-duration="1s"
           data-wow-delay="0s"
           data-wow-iteration="1"
         
         >
         <div class="index-intro-hand-img wow animate__zoomInRight"
+          v-lazy:background-image="require('@/assets/img/index/monster-hand.png')"
           data-wow-duration="2s"
           data-wow-delay="s"
           data-wow-iteration="1"
@@ -43,7 +44,7 @@
           <div class="index-intro-text">究竟追尋真相重要？ 還是選擇重要？</div>
         </div>
         <div class="index-intro-text-right">
-          <img class="index-intro-text-img" src="@/assets/img/index/text-game.png" alt="game">
+          <img class="index-intro-text-img" v-lazy="require('@/assets/img/index/text-game.png')" alt="game">
           <div class="index-intro-text-green"># 120分鐘的實境解謎遊戲</div>
           <div class="index-intro-text-green"># 探討 3個議題</div>
           <div class="index-intro-text-green"># 體驗不一樣的思辨小旅行</div>
@@ -58,11 +59,14 @@
     <!-- 關於怪奇 -->
     <contentBox ref="about" class="index-about">
       <div class="index-about-box">
-        <div class="index-about-text">
+        <div class="index-about-text"
+          v-lazy:background-image="require('@/assets/img/index/bg-blue-river.png')"
+        >
           <div>是由無生命體演變而成，因累積過多人類情緒而產生意識，變成有生命體，如妖怪般的存在。每個怪奇之怪力皆不相同，怪力等級也因生成時累積的情緒而有所差異，目前基隆地區捕獲最強四大怪奇為旭川河、林開郡洋樓、委託行、通勤；一般人平時無法看見怪奇，唯有怪奇同類，或是觀察力異常細微之人才能看見。</div>
           
         </div>
         <div class="index-about-img-hand wow animate__fadeInBottomLeft"
+          v-lazy:background-image="require('@/assets/img/index/monster-hand.png')"
           data-wow-duration="1s"
           data-wow-delay="0s"
           data-wow-iteration="1"
@@ -73,13 +77,16 @@
     </contentBox>
 
     <!-- 旭川與露露 -->
-    <contentBox ref="run" class="index-role">
+    <contentBox ref="run" class="index-role"
+      v-lazy:background-image="require('@/assets/img/index/bg-main.png')"
+    >
       <div class="index-role-box">
         <div @mouseover="isShowCardText.river = true" @mouseleave="isShowCardText.river = false"
           class="index-role-img"
+          v-lazy:background-image="require('@/assets/img/index/monster-river.png')"
         >
           <img class="index-role-img-hunt wow animate__flipInX"
-            src="@/assets/img/index/text-hunt.png" alt="hunt"
+            v-lazy="require('@/assets/img/index/text-hunt.png')" alt="hunt"
             data-wow-duration="1s"
             data-wow-delay="0s"
             data-wow-iteration="1"
@@ -94,9 +101,10 @@
         </div>
         <div @mouseover="isShowCardText.lulu = true" @mouseleave="isShowCardText.lulu = false"
           class="index-role-img index-role-img-2"
+          v-lazy:background-image="require('@/assets/img/index/monster-lulu.png')"
         >
           <img class="index-role-img-hunt wow animate__flipInX"
-            src="@/assets/img/index/text-hunt.png" alt="hunt"
+            v-lazy="require('@/assets/img/index/text-hunt.png')" alt="hunt"
             data-wow-duration="1s"
             data-wow-delay="0s"
             data-wow-iteration="1"
@@ -114,7 +122,8 @@
 
 
     <!-- 平行時空 -->
-    <contentBox ref="time" class="index-pall">
+    <contentBox ref="time" class="index-pall"
+    >
       <div class="index-pall-text-box">
         <div class="index-pall-text wow animate__fadeIn"
           data-wow-duration="1s"
@@ -150,7 +159,7 @@
         >你的真實身分</div>
       </div>
       <a href="https://frankyeah.github.io/klkuaiki/index.html" target="_blank">
-        <img class="index-pall-img wow animate__rubberBand" src="@/assets/img/index/monster-bird.png" alt="bird"
+        <img class="index-pall-img wow animate__rubberBand" v-lazy="require('@/assets/img/index/monster-bird.png')" alt="bird"
           data-wow-duration="1s"
           data-wow-delay="0s"
           data-wow-iteration="infinite"
@@ -170,8 +179,8 @@
           <div class="index-musium-text">「怪奇博物館」為世界公認研究、捕捉及管理怪奇之唯一官方組織,為防止怪奇危害人類、破壞環境,因此招集具有察覺怪奇能力之人,共同研究並擬定捕捉策略,將怪奇統一管理避免傷害,若有必要則進行銷毀怪奇之工作,維持人類世界之和平運作。</div>
           <div class="index-musium-text">組織總部設於英國倫敦,並於世界各地皆有分部,台灣分部自1960年起設於基隆港,因是地下秘密組織,原始核心成員又皆於任務中歿世,故確切成立時間已不可考。目前館長為第十五任Dr.張中元。</div>
         </div>
-        <img class="index-musium-logo" src="@/assets/img/index/logo-black.png" alt="logo">
-        <img class="index-musium-bg" src="@/assets/img/index/bg-blue-river.png" alt="river">
+        <img class="index-musium-logo" v-lazy="require('@/assets/img/index/logo-black.png')" alt="logo">
+        <img class="index-musium-bg" v-lazy="require('@/assets/img/index/bg-blue-river.png')" alt="river">
         
       </div>
     </contentBox>
@@ -182,7 +191,7 @@
 
       <div class="index-qa-box">
 
-        <img class="index-qa-logo" src="@/assets/img/index/qa-btn.png" alt="qa">
+        <img class="index-qa-logo" v-lazy="require('@/assets/img/index/qa-btn.png')" alt="qa">
         <div class="index-qa-question">．請問怪奇逃走中_混血探員在做甚麼？</div>
         <div class="index-qa-answer">。這是一個發生於基隆，手機結合街景的實境互動解謎。</div>
         
@@ -456,7 +465,6 @@ export default {
   &-intro {
     position: relative;
     margin-top: -1px;
-    background-image: url('../assets/img/index/bg-blue.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -473,7 +481,6 @@ export default {
     }
 
     &-hand-img {
-      background-image: url('../assets/img/index/monster-hand.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -548,7 +555,6 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-image: url('../assets/img/index/bg-blue-river.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -573,7 +579,6 @@ export default {
       position: absolute;
       top: 50px;
       right: calc(45% - 403px);
-      background-image: url('../assets/img/index/monster-hand.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -591,7 +596,6 @@ export default {
 
   &-role {
     position: relative;
-    background-image: url('../assets/img/index/bg-main.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -607,7 +611,6 @@ export default {
       width: 350px;
       height: 500px;
       margin: 0px 30px;
-      background-image: url('../assets/img/index/monster-river.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -615,7 +618,6 @@ export default {
     }
 
     &-img:last-child {
-      background-image: url('../assets/img/index/monster-lulu.png');
     
       & img {
         transform: rotate(-16deg) translate(-34px, -43px);
@@ -661,7 +663,7 @@ export default {
       right: 0;
       bottom: 0;
       left: 0;
-      background: url('../assets/img/index/pic-scene.png');
+      background-image: url('../assets/img/index/pic-scene.jpg');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
