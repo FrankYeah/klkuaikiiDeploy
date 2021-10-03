@@ -9,18 +9,20 @@ export default {
     base: '/klkuaikii/'
   },
   head: {
-    titleTemplate: '%s - klkuaikii',
-    title: 'klkuaikii',
+    titleTemplate: '%s',
+    title: '怪奇逃走中-混血探員',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'og:image' , property: 'og:image' , content: 'icon-single-logo.png'},
+      { hid: 'og:type' , property: 'og:type' , content: 'website'},
+      { hid: 'description', name: 'description', content: '120分鐘的實境解謎遊戲，探討3個議題，體驗不一樣的思辨小旅行，深度認識隱而不見的基隆。' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
     ]
   },
   // SCSS 配置

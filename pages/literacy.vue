@@ -104,7 +104,7 @@
 
 export default {
   head: {
-    title: '素養',
+    title: '怪奇逃走中-混血探員',
   },
   layout: 'default',
   components: {

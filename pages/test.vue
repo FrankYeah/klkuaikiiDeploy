@@ -98,7 +98,7 @@
 
 export default {
   head: {
-    title: '小怪奇測驗',
+    title: '怪奇逃走中-混血探員',
   },
   layout: 'default',
   components: {

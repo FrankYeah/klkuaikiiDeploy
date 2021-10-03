@@ -46,7 +46,7 @@
         <div class="index-intro-text-right">
           <img class="index-intro-text-img" v-lazy="require('@/assets/img/index/text-game.png')" alt="game">
           <div class="index-intro-text-green"># 120分鐘的實境解謎遊戲</div>
-          <div class="index-intro-text-green"># 探討 3個議題</div>
+          <div class="index-intro-text-green"># 探討3個議題</div>
           <div class="index-intro-text-green"># 體驗不一樣的思辨小旅行</div>
           <div class="index-intro-text-green"># 深度認識隱而不見的基隆</div>
         </div>
@@ -176,8 +176,8 @@
           data-wow-delay="0s"
           data-wow-iteration="1"
         >
-          <div class="index-musium-text">「怪奇博物館」為世界公認研究、捕捉及管理怪奇之唯一官方組織,為防止怪奇危害人類、破壞環境,因此招集具有察覺怪奇能力之人,共同研究並擬定捕捉策略,將怪奇統一管理避免傷害,若有必要則進行銷毀怪奇之工作,維持人類世界之和平運作。</div>
-          <div class="index-musium-text">組織總部設於英國倫敦,並於世界各地皆有分部,台灣分部自1960年起設於基隆港,因是地下秘密組織,原始核心成員又皆於任務中歿世,故確切成立時間已不可考。目前館長為第十五任Dr.張中元。</div>
+          <div class="index-musium-text">世界各地皆有怪奇組織,台灣的怪奇官方組織為「怪奇博物館」。據傳本館設於基隆港,因是地下秘密組織,原始核心成員又皆於任務中歿世,故確切成立時間已不可考。目前館長為第十五任Dr.張中元。</div>
+          <div class="index-musium-text">「怪奇博物館」為研究、捕捉及管理怪奇之組織,為防止怪奇危害人類、破壞環境,因此招集具有察覺怪奇能力之人,共同研究並擬定捕捉策略,將怪奇統一管理避免傷害,若有必要則進行銷毀怪奇之工作,維持人類世界之和平運作。</div>
         </div>
         <img class="index-musium-logo" v-lazy="require('@/assets/img/index/logo-black.png')" alt="logo">
         <img class="index-musium-bg" v-lazy="require('@/assets/img/index/bg-blue-river.png')" alt="river">
@@ -192,23 +192,24 @@
       <div class="index-qa-box">
 
         <img class="index-qa-logo" v-lazy="require('@/assets/img/index/qa-btn.png')" alt="qa">
-        <div class="index-qa-question">．請問怪奇逃走中_混血探員在做甚麼？</div>
-        <div class="index-qa-answer">。這是一個發生於基隆，手機結合街景的實境互動解謎。</div>
+        <div class="index-qa-question">．請問怪奇逃走中_混血探員在做什麼？</div>
+        <div class="index-qa-answer">。這是一個發生於基隆，手機結合街景的實境互動解謎遊戲。</div>
         
-        <div class="index-qa-question">．如何得到探索身分？</div>
-        <div class="index-qa-answer">。探員請注意，本次為機密任務，於2021年10月底前 (教育部確認)，僅為私下招募。預計於2022年年初擴大公開。</div>
-        <div class="index-qa-answer">。信內包含：1.一份探員須知 / 2.四份探員序號(內部確認)。</div>
+        <div class="index-qa-question">．如何得到探員身分？</div>
+        <div class="index-qa-answer">。本次為極機密任務。於2021年12月底前，由教育處私下招募探員，每位探員將有專屬登入序號。</div>
+        <div class="index-qa-answer">。想自告奮勇成為探員嗎？請洽招募窗口：（教育處窗口）</div>
         
-        <div class="index-qa-question">．探索總長度</div>
-        <div class="index-qa-answer">。探索時間約2-3小時 / 建議探索時間10：00-17：00。(內部確認)</div>
+        <div class="index-qa-question">．探索時間</div>
+        <div class="index-qa-answer">。探索時間約2-3小時 / 建議探索時間10：00-17：00。</div>
 
         <div class="index-qa-question">．探索限制</div>
         <div class="index-qa-answer">。15歲以下探員，需成年探員陪同。</div>
-        <div class="index-qa-answer">。由於搜捕怪奇穿梭於市區，包含上下樓等有障礙設備。行動不便者，為了維護您的安全，請探員慎重考慮。</div>
+        <div class="index-qa-answer">。搜捕怪奇穿梭於雞籠市區，包含上下樓等有障礙設備。</div>
+        <div class="index-qa-answer">。手機全程需使用網路，遊戲內含影音，為求最佳體驗，請自備耳機。</div>
         
-        <div class="index-qa-question">．退/換資訊</div>
+        <!-- <div class="index-qa-question">．退/換資訊</div>
         <div class="index-qa-answer">。無法參與的探員，建議將探員序號，轉給親友探索。</div>
-        <div class="index-qa-answer">。如需退票的探員，請依照教育部的規則辦理。(教育部確認)</div>
+        <div class="index-qa-answer">。如需退票的探員，請依照教育部的規則辦理。(教育部確認)</div> -->
 
         <br><br><br><br>
         <div class="index-qa-hint">若有其他問題，歡迎來信，</div>
@@ -345,17 +346,16 @@
             <div v-if="isShowDesc.education" class="index-team-popup index-team-popup-city">
               <div></div>
               <br>
-              <div>地方活動設計</div>
+              <div>以「多元聯盟、跨域共榮」為主軸，</div>
               <br>
-              <div>無用是一種精神，而學堂只是延伸</div>
+              <div>形塑文創意象、凝聚社區共識、推動觀光體驗，</div>
               <br>
-              <div>在這個以雨為名的城市，發起無數溫暖的地方生活實驗</div>
+              <div>並嘗試接軌國際，從地方創生回應全球挑戰。</div>
             </div>
             <div class="index-team-text-inner">
               <div>學習型城市</div>
               <div class="index-team-icon-box">
-                <div class="index-team-icon">f</div>
-                <div class="index-team-icon">W</div>
+                <a class="index-team-icon" href="https://www.facebook.com/klcg.gov.tw/" target="_blank">f</a>
               </div>
             </div>
           </div>
@@ -382,7 +382,7 @@ if (process.browser) { // Here we introduce... According to the environment wow.
 
 export default {
   head: {
-    title: '首頁',
+    title: '怪奇逃走中-混血探員',
   },
   layout: 'default',
   components: {
