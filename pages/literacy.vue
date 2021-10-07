@@ -180,6 +180,7 @@ export default {
 
   &-box {
     display: flex;
+    align-items: flex-start;
   }
 
   &-img-box {
@@ -188,7 +189,6 @@ export default {
 
   &-img {
     width: 400px;
-    height: 100%;
     margin: 0px 0px 20px 60px;
   }
 

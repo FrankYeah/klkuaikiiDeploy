@@ -19,7 +19,7 @@
     </div>
 
     <!-- 怪奇逃走中 -->
-    <contentBox ref="top" v-lazy:background-image="require('@/assets/img/index/bg-blue.png')" class="index-intro">
+    <contentBox ref="top" class="index-intro">
       <div class="index-intro-head-box">
         <img class="index-intro-run-img wow animate__fadeInRight" v-lazy="require('@/assets/img/index/text-main.png')" alt="run"
           data-wow-duration="1s"
@@ -76,7 +76,6 @@
 
     <!-- 旭川與露露 -->
     <contentBox ref="run" class="index-role"
-      v-lazy:background-image="require('@/assets/img/index/bg-main.png')"
     >
       <div class="index-role-box">
         <div @mouseover="isShowCardText.river = true" @mouseleave="isShowCardText.river = false"
@@ -463,6 +462,7 @@ export default {
   &-intro {
     position: relative;
     margin-top: -1px;
+    background-image: url('../assets/img/index/bg-blue.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -596,6 +596,7 @@ export default {
 
   &-role {
     position: relative;
+    background-image: url('../assets/img/index/bg-main.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
