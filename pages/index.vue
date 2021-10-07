@@ -27,7 +27,8 @@
           data-wow-iteration="1"
         
         >
-        <div class="index-intro-hand-img wow animate__fadeInTopLeft"
+        <div class="index-intro-hand-img wow animate__zoomInDown"
+          v-lazy:background-image="require('@/assets/img/index/monster-hand.png')"
           data-wow-duration="2s"
           data-wow-delay="s"
           data-wow-iteration="1"
@@ -65,6 +66,7 @@
           
         </div>
         <div class="index-about-img-hand wow animate__fadeInBottomLeft"
+          v-lazy:background-image="require('@/assets/img/index/monster-hand.png')"
           data-wow-duration="1s"
           data-wow-delay="0s"
           data-wow-iteration="1"
@@ -76,6 +78,7 @@
 
     <!-- 旭川與露露 -->
     <contentBox ref="run" class="index-role"
+      v-lazy:background-image="require('@/assets/img/index/bg-main.png')"
     >
       <div class="index-role-box">
         <div @mouseover="isShowCardText.river = true" @mouseleave="isShowCardText.river = false"
@@ -83,6 +86,7 @@
           v-lazy:background-image="require('@/assets/img/index/monster-river.png')"
         >
           <img class="index-role-img-hunt wow animate__flipInX"
+
             src="@/assets/img/index/text-hunt.png" alt="hunt"
             data-wow-duration="1s"
             data-wow-delay="0s"
@@ -120,6 +124,7 @@
 
     <!-- 平行時空 -->
     <contentBox ref="time" class="index-pall"
+      v-lazy:background-image="require('@/assets/img/index/pic-scene.jpg')"
     >
       <div class="index-pall-text-box">
         <div class="index-pall-text wow animate__fadeIn"
@@ -446,6 +451,9 @@ export default {
 <style lang="scss" scoped>
 
 .index {
+  position: relative;
+
+  
 
   &-video {
     background-color: rgb(17, 17, 82);
@@ -479,7 +487,6 @@ export default {
     }
 
     &-hand-img {
-      background-image: url('../assets/img/index/monster-hand.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -578,7 +585,6 @@ export default {
       position: absolute;
       top: 50px;
       right: calc(45% - 403px);
-      background-image: url('../assets/img/index/monster-hand.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -596,7 +602,6 @@ export default {
 
   &-role {
     position: relative;
-    background-image: url('../assets/img/index/bg-main.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -655,21 +660,21 @@ export default {
   &-pall {
     position: relative;
     height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: bottom;
 
-    &::before {
-      content: ' ';
-      position: fixed;
-      z-index: -1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url('../assets/img/index/pic-scene.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position-x: center;
-      background-position-y: bottom;
-    }
+    // &::before {
+    //   content: '';
+    //   position: fixed;
+    //   z-index: -1;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+      
+    // }
 
     &-text-box {
       position: absolute;
