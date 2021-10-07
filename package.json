@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-demo",
+  "name": "klkuaiki",
   "version": "1.0.0",
-  "description": "Nuxt Demo for my 2019 talks",
+  "description": "klkuaiki",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

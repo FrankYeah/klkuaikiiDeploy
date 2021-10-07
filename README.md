@@ -1,12 +1,12 @@
-# nuxt-demo
+# 怪奇逃走中-混血探員
 
 node v12.18.1
 
 npm 6.14.5
 
-Nuxt.js Demo for my 2019 talks.
+<!-- Nuxt.js Demo for my 2019 talks.
 
-[See demo](https://nuxt-demo.surge.sh).
+[See demo](https://nuxt-demo.surge.sh). -->
 
 ## Setup
 

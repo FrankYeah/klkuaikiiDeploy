@@ -27,8 +27,7 @@
           data-wow-iteration="1"
         
         >
-        <div class="index-intro-hand-img wow animate__zoomInRight"
-          v-lazy:background-image="require('@/assets/img/index/monster-hand.png')"
+        <div class="index-intro-hand-img wow animate__fadeInTopLeft"
           data-wow-duration="2s"
           data-wow-delay="s"
           data-wow-iteration="1"
@@ -66,7 +65,6 @@
           
         </div>
         <div class="index-about-img-hand wow animate__fadeInBottomLeft"
-          v-lazy:background-image="require('@/assets/img/index/monster-hand.png')"
           data-wow-duration="1s"
           data-wow-delay="0s"
           data-wow-iteration="1"
@@ -86,7 +84,7 @@
           v-lazy:background-image="require('@/assets/img/index/monster-river.png')"
         >
           <img class="index-role-img-hunt wow animate__flipInX"
-            v-lazy="require('@/assets/img/index/text-hunt.png')" alt="hunt"
+            src="@/assets/img/index/text-hunt.png" alt="hunt"
             data-wow-duration="1s"
             data-wow-delay="0s"
             data-wow-iteration="1"
@@ -104,7 +102,7 @@
           v-lazy:background-image="require('@/assets/img/index/monster-lulu.png')"
         >
           <img class="index-role-img-hunt wow animate__flipInX"
-            v-lazy="require('@/assets/img/index/text-hunt.png')" alt="hunt"
+            src="@/assets/img/index/text-hunt.png" alt="hunt"
             data-wow-duration="1s"
             data-wow-delay="0s"
             data-wow-iteration="1"
@@ -481,6 +479,7 @@ export default {
     }
 
     &-hand-img {
+      background-image: url('../assets/img/index/monster-hand.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -579,6 +578,7 @@ export default {
       position: absolute;
       top: 50px;
       right: calc(45% - 403px);
+      background-image: url('../assets/img/index/monster-hand.png');
       background-repeat: no-repeat;
       background-size: cover;
       background-position-x: center;
@@ -646,7 +646,7 @@ export default {
 
     &-text {
       margin-top: 20px;
-      font-size: 14px;
+      font-size: 17px;
       line-height: 1.6;
     }
   }
@@ -871,6 +871,7 @@ export default {
 @media( max-width: 1023px ){
 
 .index {
+  margin-top: 49px;
 
   &-video {
     height: auto;
@@ -926,8 +927,7 @@ export default {
     }
 
     &-text-green {
-      margin: 10px auto 0px 40px;
-      font-size: 13px;
+      font-size: 17px;
       text-align: left;
     }
 
@@ -957,7 +957,7 @@ export default {
 
       & div {
         transform: none;
-        font-size: 13px;
+        font-size: 17px;
       }
     }
 
@@ -1029,7 +1029,7 @@ export default {
     }
 
     &-text {
-      font-size: 13px;
+      font-size: 17px;
     }
 
     &-img {
@@ -1063,7 +1063,7 @@ export default {
 
     &-text {
       margin: 20px 0px 0px;
-      font-size: 13px;
+      font-size: 17px;
       color: #111152;
     }
   }
@@ -1081,15 +1081,15 @@ export default {
     }
 
     &-question {
-      font-size: 13px;
+      font-size: 17px;
     }
 
     &-answer {
-      font-size: 13px;
+      font-size: 17px;
     }
 
     &-hint {
-      font-size: 13px;
+      font-size: 17px;
       text-align: center;
     }
   }

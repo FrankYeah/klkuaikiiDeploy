@@ -17,9 +17,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'og:image' , property: 'og:image' , content: 'icon-single-logo.png'},
+      { hid: 'og:title'  , property: 'og:title'  , content: '怪奇逃走中-混血探員'},
+      { hid: 'og:image' , property: 'og:image' , content: 'icon-single-logo.jpeg'},
       { hid: 'og:type' , property: 'og:type' , content: 'website'},
-      { hid: 'description', name: 'description', content: '120分鐘的實境解謎遊戲，探討3個議題，體驗不一樣的思辨小旅行，深度認識隱而不見的基隆。' }
+      { hid: 'og:url' , property: 'og:url' , content: 'https://frankyeah.github.io/klkuaikii/'},
+      { hid: 'description', name: 'description', content: '120分鐘的實境解謎遊戲，探討3個議題，體驗不一樣的思辨小旅行，深度認識隱而不見的基隆。' },
+      { hid: 'og:description' , property: 'og:description' , content: '120分鐘的實境解謎遊戲，探討3個議題，體驗不一樣的思辨小旅行，深度認識隱而不見的基隆。'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
