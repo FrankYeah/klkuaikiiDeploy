@@ -298,7 +298,7 @@
             </div>
             <div class="index-team-text-inner">
               <div>無用學堂</div>
-              <a class="index-team-icon" href="https://www.facebook.com/KeelungLifeLab" target="_blank">F</a>
+              <a class="index-team-icon" href="https://www.facebook.com/KeelungLifeLab" target="_blank">f</a>
             </div>
           </div>
           <div class="index-team-text index-team-none">+</div>

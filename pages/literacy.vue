@@ -46,9 +46,13 @@
           <div class="literacy-text">在最後的選擇裡，你是否也感受到要同時維護集體秩序、個體自由的兩難? 進而思考著是否有第三種可能呢? </div>
           <div class="literacy-text">我們認為價值觀沒有絕對的對與錯，遊戲也無法立刻、直接解決什麼問題，但透過遊戲我們得以從不同的視角去認識在地議題，埋下了一顆思辨的種子，期待能一起與社會議題及他人共好。</div>
         </div>
-        <div class="literacy-img-box">
-          <img class="literacy-img2" src="@/assets/img/literacy/4.png" alt="">
-          <img class="literacy-img2" src="@/assets/img/literacy/5.png" alt="">
+        <div class="literacy-img-box2">
+          <a href="javascript:void(0);">
+            <img class="literacy-img2" src="@/assets/img/literacy/4.png" alt="">
+          </a>
+          <a href="javascript:void(0);">
+            <img class="literacy-img2" src="@/assets/img/literacy/5.png" alt="">
+          </a>
         </div>
       </div>
 
@@ -227,6 +231,10 @@ export default {
     width: 30%;
   }
 
+  &-img-box2 {
+    width: 30%;
+  }
+
   &-img {
     width: 100%;
     // width: 100%;
@@ -323,6 +331,12 @@ export default {
       justify-content: space-around;
     }
 
+    &-img-box2 {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+
     &-img {
       max-width: 400px;
       width: 100%;
@@ -330,8 +344,8 @@ export default {
     }
 
     &-img2 {
-      width: 140px;
-      height: 210px;
+      max-width: 300px;
+      width: 100%;
       margin: 4px auto 0px;
     }
 
