@@ -160,12 +160,13 @@
           data-wow-iteration="1"
         >你的真實身分</div>
       </div>
-      <a href="https://frankyeah.github.io/klkuaiki/index.html" target="_blank">
+      <a class="index-pall-img-box" href="https://frankyeah.github.io/klkuaiki/index.html" target="_blank">
         <img class="index-pall-img wow animate__rubberBand" v-lazy="require('@/assets/img/index/monster-bird.png')" alt="bird"
           data-wow-duration="1s"
           data-wow-delay="0s"
           data-wow-iteration="infinite"
         >
+        <div class="index-pall-back">2020怪奇事件簿</div>
       </a>
     </contentBox>
 
@@ -687,16 +688,25 @@ export default {
       font-size: 20px;
     }
 
-    &-img {
+    &-img-box {
       position: absolute;
       left: 15%;
       bottom: 50px;
-      width: 100px;
 
       &:hover {
         opacity: 0.8;
       }
     }
+
+    &-img {
+      width: 100px;
+    }
+
+    &-back {
+      margin-top: 8px;
+    }
+
+
   }
 
 

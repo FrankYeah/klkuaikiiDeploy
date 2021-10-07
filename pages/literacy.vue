@@ -116,11 +116,15 @@
           <a href="javascript:void(0);">
             <img class="literacy-img" src="@/assets/img/literacy/11.jpg" alt="">
           </a>
-          <router-link :to="'/'">
-            <img class="literacy-img literacy-img-animate" src="@/assets/img/literacy/12.png" alt="">
-          </router-link>
         </div>
       </div>
+      
+      <router-link :to="'/'" class="literacy-last-box">
+        <a href="javascript:void(0);">
+          <img class="literacy-img3 literacy-img-animate" src="@/assets/img/literacy/12.png" alt="">
+        </a>
+        <div class="literacy-sub">返回官網</div>
+      </router-link>
 
     </div>
 
@@ -235,6 +239,23 @@ export default {
     margin: 0px 0px 0px 120px;
   }
 
+  &-last-box {
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &-img3 {
+    width: 400px;
+    margin: 20px 0px;
+  }
+
   &-img-animate {
     animation-duration: 0.6s;
     animation-name: blink;
@@ -313,6 +334,15 @@ export default {
       height: 210px;
       margin: 4px auto 0px;
     }
+
+    &-last-box {
+      display: block;
+    }
+
+  &-img3 {
+    max-width: 400px;
+    width: 100%;
+  }
 
   }
 
