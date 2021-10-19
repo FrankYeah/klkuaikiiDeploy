@@ -316,7 +316,7 @@
             </div>
             <div class="index-team-text-inner">
               <div>西打藍</div>
-              <a class="index-team-icon" href="https://siddharam.com.tw/" target="_blank">W</a>
+              <a class="index-team-icon" href="https://siddharam.com" target="_blank">W</a>
             </div>
           </div>
           <div class="index-team-text index-team-plus">+</div>
