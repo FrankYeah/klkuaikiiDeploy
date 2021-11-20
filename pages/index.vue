@@ -199,11 +199,11 @@
         <div class="index-qa-answer">。這是一個發生於基隆，手機結合街景的實境互動解謎遊戲。</div>
         
         <div class="index-qa-question">．如何得到探員身分？</div>
-        <div class="index-qa-answer">。本次為極機密任務。於2021年12月底前，由教育處私下招募探員，每位探員將有專屬登入序號。</div>
-        <div class="index-qa-answer">。想自告奮勇成為探員嗎？請洽招募窗口：（教育處窗口）</div>
+        <div class="index-qa-answer">。本次為極機密限時任務（於2022年1月底前），每位探員將有專屬登入序號。</div>
+        <div class="index-qa-answer">。想自告奮勇成為探員嗎？請填寫表單（表單連結），將由怪奇總部秘密通知下一步行動！</div>
         
         <div class="index-qa-question">．探索時間</div>
-        <div class="index-qa-answer">。探索時間約2-3小時 / 建議探索時間10：00-17：00。</div>
+        <div class="index-qa-answer">。探索時間約2-2.5小時 / 建議探索時間10：00-17：00。</div>
 
         <div class="index-qa-question">．探索限制</div>
         <div class="index-qa-answer">。15歲以下探員，需成年探員陪同。</div>
