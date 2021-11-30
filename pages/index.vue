@@ -40,7 +40,7 @@
           data-wow-delay="0s"
           data-wow-iteration="1"
         >
-          <div @click="scrollToRef()" class="index-intro-text">混血實驗是轉機？或是衝突開端？</div>
+          <div class="index-intro-text">混血實驗是轉機？或是衝突開端？</div>
           <div class="index-intro-text">究竟追尋真相重要？ 還是選擇重要？</div>
         </div>
         <div class="index-intro-text-right">

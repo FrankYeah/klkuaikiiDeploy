@@ -123,19 +123,14 @@
         </div>
       </div>
       
-      <router-link :to="'/'" class="literacy-last-box">
+      <router-link :to="'/choose'" class="literacy-last-box">
         <a href="javascript:void(0);">
           <img class="literacy-img3 literacy-img-animate" src="@/assets/img/literacy/12.png" alt="">
         </a>
-        <div class="literacy-sub">返回官網</div>
+        <div class="literacy-sub">返回選單</div>
       </router-link>
 
     </div>
-
-
-    
-    
-    
     
   </div>
 </template>
