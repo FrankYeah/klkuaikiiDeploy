@@ -200,7 +200,7 @@
         
         <div class="index-qa-question">．如何得到探員身分？</div>
         <div class="index-qa-answer">。本次為極機密限時任務（於2022年1月底前），每位探員將有專屬登入序號。</div>
-        <div class="index-qa-answer">。想自告奮勇成為探員嗎？請填寫表單（<a href="https://www.surveycake.com/s/YDggZ" target="_blank">表單連結</a>），將由怪奇總部秘密通知下一步行動！</div>
+        <div class="index-qa-answer">。想自告奮勇成為探員嗎？請填寫表單（<a style="color: #25e004;" href="https://www.surveycake.com/s/YDggZ" target="_blank">表單連結</a>），將由怪奇總部秘密通知下一步行動！</div>
         
         <div class="index-qa-question">．探索時間</div>
         <div class="index-qa-answer">。探索時間約2-2.5小時 / 建議探索時間10：00-17：00。</div>
